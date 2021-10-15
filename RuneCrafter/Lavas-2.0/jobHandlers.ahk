@@ -10,16 +10,16 @@ CoordMode, Mouse, Relative
 ringCharges := 0
 necklaceCharges := 0
 
+; ✅
 startScript() {
     global ringCharges
     global necklaceCharges
     global interfaceCoords
 
     ; Set initial jewelry charge based on user inputs
-    InputBox, ringCharges, "Input RoD charges", "Input the current number of ring of dueling charges for your equipped RoD, or zero for none."
-    InputBox, necklaceCharges, "Input Binding Necklace charges", "Input the current number of binding necklace charges for your equipped necklace, or zero for none."
+    InputBox, necklaceCharges, "Input Binding Necklace charges", "Enter the number of charges your currently equipped Binding necklace has: "
+    InputBox, ringCharges, "Input RoD charges", "Enter the number of charges your currently equipped ring of duelling has: (0 if not equipped)"
 
-    MsgBox, % "Interface coords X: " interfaceCoords["compassX"] " Y: " interfaceCoords["compassY"]
     ; Click compass to alignt camera
     customMouseMove(interfaceCoords["compassX"], interfaceCoords["compassY"], "slow")
     MouseClick, Left
@@ -30,8 +30,7 @@ startScript() {
     ; Zoom all the way out to normalize x/y coorindate interface
     customMouseMove(280, 190, "fast", 50, 50)
     Send, {WheelDown 100}
-
-    clickCwarsBankIcon()
+    return
 }
 
 bankCwars() {
@@ -76,23 +75,33 @@ moveToAltar() {
     clickDuelArenaMinimap()
 
     ; click mysterious ruins to enter -> sleep
+    customMouseMove(290, 142, "fast", 3, 3)
+    MouseClick, Left
+    Random, clickRuinsSleep, 3000, 3100
 
-    ; click the minimap x y location to move precisely to spot near fire altar -> sleep
+    idleMouseMovements()
 
+    customMouseMove(492, 332)
+    Sleep, clickRuinsSleep
+    ; click the tile nearest the fire-altar to move precisely to spot near fire altar -> sleep
+    MouseClick, Left
+    Random, moveToAltarSleep, 2500, 2625
+    Sleep, moveToAltarSleep
+
+    return
+}
+
+craftLavaRunes() {
     ; open mage tab & cast imbue
+    castImbue()
 
     ; open inventory -> use earth runes with fire altar -> clickPouches("empty") [shift down + left click] -> use earth runes with fire altar
+    craftLavas()
+
+    ; Return to Cwars bank to start over
+    teleportTo("cw")
+
     return
-}
-
-craftLavas() {
-    return
-
-}
-
-returnToBank() {
-    return
-
 }
 
 ; Cwars bank

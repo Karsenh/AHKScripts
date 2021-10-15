@@ -3,5 +3,5 @@
 ## Do the following before starting your AHK script
 
 1. Place Runelite or Runescape official client into fixed interface size mode
-2. Click the compass next to the mini-map
-3. Zoom camera all the way out
+2. Start with your weight reducing gear equipped
+3. Set-up inventory, bank tab, and equpment as shown in images below:

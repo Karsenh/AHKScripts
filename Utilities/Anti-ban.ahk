@@ -28,6 +28,23 @@ customMouseMove(endX, endY, speed="fast", xRange=4, yRange=4) {
     return 
 }
 
+customMouseClick(clickDirection="left") {
+    Random, xCoordDev, 1, 16
+    Random, yCoordDev, 1, 16
+    Random, moveDelay, 1, 50
+    MouseGetPos, currX, currY
+    Random, mouseSpeed, 200, 275
+
+    if (clickDirection == "left") {
+        MouseClick, Left
+        Sleep, moveDelay
+        MouseMove, currX + xCoordDev, currY + yCoordDev, mouseSpeed 
+    } else {
+        MouseClick, Right
+    }
+    return
+}
+
 idleMouseMovements() {
     Random, preDelay, 50, 325
     Random, loopIterations, 1, 4
