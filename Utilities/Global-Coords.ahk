@@ -5,13 +5,13 @@ SetWorkingDir, %A_ScriptDir%
 skillsCoords := Object()
 
 ; Equipment coords
-equipmentCoords := Object()
+equipmentCoords := Object("ringSlotX", 708, "ringSlotY", 413)
 
 ; Prayer coords
 prayerCoords := Object()
 
 ; Inventory coords (from left to right, top to bottom)
-inventoryCoords := Object("spot1X", 590, "spot1Y", 255, "spot2X", 630, "spot2Y", 255, "spot3X", 675, "spot3Y", 255, "spot4X", 715, "spot4Y", 253, "spot8X", 714, "spot8Y", 290)
+inventoryCoords := Object("slot1X", 590, "slot1Y", 255, "slot2X", 630, "slot2Y", 255, "slot3X", 675, "slot3Y", 255, "slot4X", 715, "slot4Y", 253, "slot5X", 589, "slot5Y", 293, "slot8X", 714, "slot8Y", 290, "slot9X", 588, "slot9Y", 327)
 
 ; Spells (Magic tab)
 standardSpellCoords := Object("highAlchX", 725, "highAlchY", 307, "seersTpX", 675, "seersTpY", 305)
