@@ -16,6 +16,8 @@ startScript() {
     global necklaceCharges
     global interfaceCoords
 
+    WinActivate, RuneLite
+
     ; Set initial jewelry charge based on user inputs
     InputBox, necklaceCharges, "Input Binding Necklace charges", "Enter the number of charges your currently equipped Binding necklace has: "
     InputBox, ringCharges, "Input RoD charges", "Enter the number of charges your currently equipped ring of duelling has: (0 if not equipped)"
@@ -24,12 +26,13 @@ startScript() {
     customMouseMove(interfaceCoords["compassX"], interfaceCoords["compassY"], "slow")
     MouseClick, Left
 
-    Random, rActionDelay, 150, 275
+    Random, rActionDelay, 100, 300
     Sleep, rActionDelay
 
     ; Zoom all the way out to normalize x/y coorindate interface
     customMouseMove(280, 190, "fast", 50, 50)
     Send, {WheelDown 100}
+
     return
 }
 
@@ -75,17 +78,18 @@ moveToAltar() {
     clickDuelArenaMinimap()
 
     ; click mysterious ruins to enter -> sleep
-    customMouseMove(290, 142, "fast", 3, 3)
+    customMouseMove(290, 130, "fast", 2, 2)
     MouseClick, Left
-    Random, clickRuinsSleep, 3000, 3100
+    Random, clickRuinsSleep, 2300, 2400
 
-    idleMouseMovements()
+    offsetTime := idleMouseMovements()
 
+    ; Move mouse to tile near fire altar
     customMouseMove(492, 332)
-    Sleep, clickRuinsSleep
+    Sleep, clickRuinsSleep - offsetTime
     ; click the tile nearest the fire-altar to move precisely to spot near fire altar -> sleep
     MouseClick, Left
-    Random, moveToAltarSleep, 2500, 2625
+    Random, moveToAltarSleep, 2200, 2300
     Sleep, moveToAltarSleep
 
     return

@@ -46,18 +46,22 @@ customMouseClick(clickDirection="left") {
 }
 
 idleMouseMovements() {
+    startTime := A_TickCount
     Random, preDelay, 50, 325
-    Random, loopIterations, 1, 4
+    Random, loopIterations, 1, 3
 
     Sleep, preDelay
     Loop, %loopIterations% {
-        Random, coordX, 0, 700
+        Random, coordX, 0, 750
         Random, coordY, 0, 500
-        Random, loopSleep, 50, 325
+        Random, loopSleep, 25, 325
 
         customMouseMove(coordX, coordY, "slow")
         Sleep, loopSleep
     }
+    elapsedTime := A_TickCount - startTime
+    ; MsgBox, % "Elapsed time = " elapsedTime
+    return elapsedTime
 }
 
 RandomBezier( X0, Y0, Xf, Yf, O="" ) {

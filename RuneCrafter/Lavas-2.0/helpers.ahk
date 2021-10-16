@@ -20,10 +20,6 @@ checkJewelry() {
     return
 }
 
-checkPouches() {
-
-}
-
 withdrawAndEquipJewelry(jewelryType="necklace") {
     global ringCharges
     global necklaceCharges
@@ -55,18 +51,18 @@ withdrawAndEquipJewelry(jewelryType="necklace") {
     customMouseMove(currX+rXDev, currY+114, "fastest")
     MouseClick, Left
 
-    Random, equipJewelrySleep, 500, 525
+    Random, equipJewelrySleep, 50, 200
     Sleep, equipJewelrySleep 
 
     return
 }
 
 clickCwarsBankChest() {
-    Random, bankDelay, 550, 625
+    Random, bankDelay, 350, 450
     ; Open inventory
     Send, {F1}
     ; Mouse move to cwars bank chest
-    customMouseMove(277, 200, "slow", 2, 2)
+    customMouseMove(282, 196, "slow", 2, 2)
     MouseClick, Left
     Sleep, bankDelay
     return
@@ -76,7 +72,7 @@ teleportTo(location) {
     global ringCharges
     ; Open equipment interface
     Send, {F5}
-    Random, teleportDelay, 1000, 1250
+    Random, teleportDelay, 2900, 3000
 
     global equipmentCoords
     customMouseMove(equipmentCoords["ringSlotX"], equipmentCoords["ringSlotY"])
@@ -97,11 +93,9 @@ teleportTo(location) {
 
     ringCharges -= 1
 
-    ; DEBUGGING
-    ToolTip, % "Ring Charges: " ringCharges
-    idleMouseMovements()
+    offsetTime := idleMouseMovements()
 
-    Sleep, teleportDelay
+    Sleep, teleportDelay-offsetTime
 
     return
 }
@@ -165,29 +159,9 @@ useEarthsOnAltar() {
     global inventoryCoords
     customMouseMove(inventoryCoords["slot13X"], inventoryCoords["slot13Y"])
     MouseClick, Left
-    customMouseMove(300, 214, "fast", 6, 6)
+    customMouseMove(300, 208, "fast", 1, 1)
     MouseClick, Left
     necklaceCharges -= 1
 
-    ; DEBUGGING
-    ToolTip, % "Necklace charges: " necklaceCharges
     return
 }
-
-; enterPin(num1, num2, num3, num4) {
-;     Random, pinSleep, 900, 1125
-;     Random, rSleep1, 300, 425
-;     Random, rSleep2, 300, 425
-;     Random, rSleep3, 300, 425
-;     ; FindText.Click(X, Y, "L")
-;     Send, {num1}
-;     Sleep, rSleep1
-
-;     Send, {num2}
-;     Sleep, rSleep2
-
-;     Send, {num3}
-;     Sleep, rSleep3
-
-;     Send, {num4}
-; }

@@ -10,10 +10,12 @@ clickCwarsBankIcon() {
 
     if (ok:=FindText(X, Y, 2874-150000, 634-150000, 2874+150000, 634+150000, 0, 0, Text))
     {
-        Random, clickBankChestDelay, 3500, 3575
-        ; FindText.Click(X, Y, "L")
-        customMouseMove(X, Y)
-        Sleep, clickBankChestDelay
+        Random, clickBankChestDelay, 3400, 3500
+        FindText.Click(X, Y, "L")
+        ; customMouseMove(X, Y)
+        offsetTime := idleMouseMovements()
+
+        Sleep, clickBankChestDelay-offsetTime
     }
 
     ; for i,v in ok

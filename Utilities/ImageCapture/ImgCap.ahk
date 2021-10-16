@@ -1,3 +1,4 @@
+#Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 ;/*
@@ -1320,7 +1321,8 @@ WindowToScreen(ByRef x, ByRef y, x1, y1, id:="")
         Random, varMouseSpeed, 3.1, 4.1
         bak:=A_CoordModeMouse
         CoordMode, Mouse, Screen
-        MouseMove, x, y, varMouseSpeed
+        customMouseMove(x, y)
+        ; MouseMove, x, y, varMouseSpeed
         Click, %x%, %y%, %other%
         CoordMode, Mouse, %bak%
         Sleep, (ms!="" ? ms : InStr(other,"R") ? 500 : 100)
