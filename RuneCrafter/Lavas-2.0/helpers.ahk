@@ -132,6 +132,8 @@ castImbue() {
     Send, {F2}
     customMouseMove(630, 355, "fast", 3, 3)
     MouseClick, Left
+    Random, imbueSleep, 150, 200
+    Sleep, imbueSleep
     return
 }
 
@@ -159,7 +161,7 @@ useEarthsOnAltar() {
     global inventoryCoords
     customMouseMove(inventoryCoords["slot13X"], inventoryCoords["slot13Y"])
     MouseClick, Left
-    customMouseMove(300, 208, "fast", 1, 1)
+    customMouseMove(303, 208, "fast", 1, 1)
     MouseClick, Left
     necklaceCharges -= 1
 
