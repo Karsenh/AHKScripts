@@ -1,8 +1,9 @@
 #SingleInstance, Force
-#Include, D:\Misc Development\AHKScripts\RuneCrafter\Lavas-2.0\helpers.ahk
-#Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
-#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
-#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
+#Include, ..\..\Utilities\Anti-ban.ahk
+#Include, .\helpers.ahk
+#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
+#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
+
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
 

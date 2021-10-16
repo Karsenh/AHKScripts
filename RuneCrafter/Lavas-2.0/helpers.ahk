@@ -1,6 +1,6 @@
-#Include, D:\Misc Development\AHKScripts\RuneCrafter\Lavas-2.0\jobHandlers.ahk
-#Include, D:\Misc Development\AHKScripts\Utilities\Global-Coords.ahk
-#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\Imgs\Banking\checkPin.ahk
+#Include, .\jobHandlers.ahk
+#Include, ..\..\Utilities\Global-Coords.ahk
+
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
