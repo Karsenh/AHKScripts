@@ -53,5 +53,9 @@ Ins::
     ; moveToAltar()
     ; clickCwarsBankIcon()
     ; clickDuelArenaMinimap()
-    idleMouseMovements()
+    ; idleMouseMovements()
+    ; withdrawEss()
+    teleportTo("house")
+    drinkFromPool()
+    ; useOrnateFromPool("cw")
 return

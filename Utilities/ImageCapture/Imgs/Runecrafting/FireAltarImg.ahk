@@ -1,4 +1,5 @@
-#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\ImgCap.ahk
+#Include, ..\..\ImgCap.ahk
+
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 

@@ -10,7 +10,7 @@ checkJewelry() {
     global ringCharges
     global necklaceCharges
 
-    if (ringCharges == 0) {
+    if (ringCharges == 0 || ringCharges == 1) {
         withdrawAndEquipJewelry("ring")
     }
 
@@ -23,6 +23,7 @@ checkJewelry() {
 withdrawAndEquipJewelry(jewelryType="necklace") {
     global ringCharges
     global necklaceCharges
+    global inventoryCoords
 
     if (jewelryType == "ring") {
         ; Ring
@@ -42,7 +43,7 @@ withdrawAndEquipJewelry(jewelryType="necklace") {
 
     Sleep, withdrawJewelrySleep
 
-    customMouseMove(630, 255, "fast")
+    customMouseMove(inventoryCoords["slot2X"], inventoryCoords["slot2Y"])
     MouseClick, Right
 
     MouseGetPos, currX, currY
@@ -71,27 +72,49 @@ clickCwarsBankChest() {
 teleportTo(location) {
     global ringCharges
     ; Open equipment interface
-    Send, {F5}
     Random, teleportDelay, 2900, 3000
 
     global equipmentCoords
-    customMouseMove(equipmentCoords["ringSlotX"], equipmentCoords["ringSlotY"])
-    MouseClick, Right
-
-    MouseGetPos, currX, currY
 
     if (location == "da") {
+
+        Send, {F5}
         ; Duel Arena + 40px (y)
-        selectionY := currY + 40 
+        customMouseMove(equipmentCoords["ringSlotX"], equipmentCoords["ringSlotY"])
+        MouseClick, Right
+
+        MouseGetPos, currX, currY
+        selectionY := currY + 40
+        customMouseMove(currX, selectionY, "fastest", 1, 1)
+        MouseClick, Left
+        ringCharges -= 1
+
     } else if (location == "cw") {
+        Send, {F5}
+
+        customMouseMove(equipmentCoords["ringSlotX"], equipmentCoords["ringSlotY"])
+        MouseClick, Right
+
+        MouseGetPos, currX, currY
         ; Castle Wars + 54px (y)
         selectionY := currY + 54
+        customMouseMove(currX, selectionY, "fastest", 1, 1)
+        MouseClick, Left
+        ringCharges -= 1
+
+    } else if (location == "house") {
+        Send, {F5}
+        customMouseMove(611, 293)
+        MouseClick, Right
+
+        MouseGetPos, currX, currY
+
+        customMouseMove(currX, currY+70, "fastest", 3, 1)
+        MouseClick, Left
+
+        Sleep, 2000
     }
-
-    customMouseMove(currX, selectionY, "fastest", 1, 1)
-    MouseClick, Left
-
-    ringCharges -= 1
+    ToolTip, % "Ring charges = " ringCharges
 
     offsetTime := idleMouseMovements()
 
@@ -167,3 +190,19 @@ useEarthsOnAltar() {
 
     return
 }
+
+drinkFromPool() {
+    Random, drinkFromPoolSleep, 4000, 4100
+    customMouseMove(236, 169, "fast", 2, 2)
+    MouseClick, Left
+
+    Sleep, drinkFromPoolSleep
+    return
+}
+
+; useOrnateFromPool(location) {
+;     Random, clickOrnateTeleportSleep, 6000, 6100
+;     customMouseMove(226, 156, "fast", 2, 2)
+;     MouseClick, Left
+;     Sleep, clickOrnateTeleportSleep
+; }

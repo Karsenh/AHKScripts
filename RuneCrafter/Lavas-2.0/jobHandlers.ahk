@@ -10,6 +10,7 @@ CoordMode, Mouse, Relative
 ; Store charges to know when to replace jewelry
 ringCharges := 0
 necklaceCharges := 0
+runCount := 0
 
 ; ✅
 startScript() {
@@ -41,6 +42,7 @@ bankCwars() {
     ; Click bank icon mini map to move to chest -> sleep
     global ringCharges
     global necklaceCharges
+    global runCount
 
     ; ✅ Move to bank chest in cwars
     clickCwarsBankIcon()
@@ -69,7 +71,7 @@ bankCwars() {
     Send, {Esc}
 
     ; ✅ Teleport to Duel Arena
-    teleportTo("da") 
+    teleportTo("da")
 
     return
 }
@@ -97,6 +99,10 @@ moveToAltar() {
 }
 
 craftLavaRunes() {
+    global runCount
+    global necklaceCharges
+    global ringCharges
+
     ; open mage tab & cast imbue
     castImbue()
 
@@ -104,7 +110,20 @@ craftLavaRunes() {
     craftLavas()
 
     ; Return to Cwars bank to start over
-    teleportTo("cw")
+    if (mod(runCount, 15) != 0) {
+        teleportTo("cw")
+    } else {
+        teleportTo("house")
+        drinkFromPool()
+        ; useOrnateFromPool("cw")
+        teleportTo("cw")
+    }
+
+    runCount += 1
+
+    ToolTip, % "NecklaceCharges = " necklaceCharges, 0, 0
+    ToolTip, % "RingCharges = " ringCharges, 0, 30 
+    ToolTip, % "Run Count = " runCount, 0, 60 
 
     return
 }

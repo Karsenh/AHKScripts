@@ -1,5 +1,6 @@
 #Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
 #Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\ImgCap.ahk
+
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 
@@ -17,9 +18,5 @@ clickCwarsBankIcon() {
 
         Sleep, clickBankChestDelay-offsetTime
     }
-
-    ; for i,v in ok
-    ;     if (i<=2)
-    ;     FindText.MouseTip(ok[i].x, ok[i].y)
 
 }
