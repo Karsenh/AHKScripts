@@ -1,5 +1,5 @@
-#SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
+#SingleInstance, Force
 CoordMode, Mouse, Relative
 
 customMouseMove(endX, endY, speed="fast", xRange=4, yRange=4) {

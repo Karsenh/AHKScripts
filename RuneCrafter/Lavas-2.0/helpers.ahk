@@ -222,6 +222,8 @@ useEarthsOnAltar() {
     MouseClick, Left
     necklaceCharges -= 1
 
+    ToolTip, % "Necklace Charges = " necklaceCharges
+
     return
 }
 
