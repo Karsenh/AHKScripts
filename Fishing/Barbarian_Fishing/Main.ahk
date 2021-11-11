@@ -5,6 +5,8 @@ CoordMode, Mouse, Relative
 
 ; Drop all fish from inventoryslot 3 onward
 PgUp::
+    WinActivate, RuneLite
+
     dropInventItems(False, 3)
 return
 

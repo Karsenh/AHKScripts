@@ -4,7 +4,12 @@ SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
 
 PgUp::
-
+    setup()
+    Loop, {
+        withdrawLogs()
+        moveToStart()
+        burnLogs()
+    }
 return
 
 PgDn::

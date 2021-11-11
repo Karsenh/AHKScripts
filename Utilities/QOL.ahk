@@ -17,8 +17,27 @@ debugMouseCoords() {
     return
 }
 
+normalizeInterface() {
+    global interfaceCoords
+
+    WinActivate, RuneLite
+
+    ; Click compass to alignt camera
+    customMouseMove(interfaceCoords["compassX"], interfaceCoords["compassY"], "slow")
+    MouseClick, Left
+
+    Random, rActionDelay, 100, 300
+    Sleep, rActionDelay
+
+    ; Zoom all the way out to normalize x/y coorindate interface
+    customMouseMove(280, 190, "fast", 50, 50)
+    Send, {WheelDown 100}
+}
+
 dropInventItems(isInputEnabled=False, startSlot=1, endSlot=28) {
     global inventoryCoords
+
+    Send, {f1}
 
     if (isInputEnabled) {
         InputBox, startSlot, "Start Slot", "Enter the starting inventory slot:"
@@ -26,8 +45,8 @@ dropInventItems(isInputEnabled=False, startSlot=1, endSlot=28) {
     }
     numIterations := endSlot - startSlot + 1
 
-    firstSlotX := % "spot" startSlot "X" 
-    firstSlotY := % "spot" startSlot "Y"
+    firstSlotX := % "slot" startSlot "X" 
+    firstSlotY := % "slot" startSlot "Y"
 
     inventSlotX := inventoryCoords[firstSlotX]
     inventSlotY := inventoryCoords[firstSlotY]

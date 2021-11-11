@@ -6,6 +6,7 @@ CoordMode, Mouse, Relative
 
 isFirstRow := true
 
+; Start script standing in front of south-west banker in GE
 setup() {
     global interfaceCoords
 
@@ -19,11 +20,13 @@ setup() {
     customMouseMove(265, 233, "fast", 100, 100)
     Send, {WheelDown 50}
 
-    customMouseMove(275, 180, "slow", 2, 2)
+    customMouseMove(277, 181, "slow", 2, 2)
     MouseClick, Left
 
     customMouseMove(337, 346, "slow", 3, 3)
     MouseClick, Left
+
+    return
 }
 
 withdrawLogs() {
@@ -36,7 +39,7 @@ moveToStart() {
     global isFirstRow
 
     if (isFirstRow) {
-        customMouseMove(710, 131, "slow", 0, 0)
+        customMouseMove(711, 132, "slow", 0, 0)
     } else {
         customMouseMove(710, 135, "slow", 0, 0)
     }
@@ -44,6 +47,8 @@ moveToStart() {
     isFirstRow := !isFirstRow
 
     Sleep, 6000
+    return
+
 }
 
 burnLogs() {
@@ -53,23 +58,27 @@ burnLogs() {
     currLogSlotX := inventoryCoords["slot2X"]
     currLogSlotY := inventoryCoords["slot2Y"]
 
+    row := 1
+
     Loop, 27 {
+        ; ToolTip, % "A_Index = " A_Index
+        if (Mod(A_Index, 4) == 0) {
+            currLogSlotX -= 160
+            currLogSlotY += 35
+        }
+
         customMouseMove(inventoryCoords["slot1X"], inventoryCoords["slot1Y"], "fastest")
         MouseClick, Left
         customMouseMove(currLogSlotX, currLogSlotY, "fastest")
         MouseClick, Left
-        currLogSlotX += 40
-
-        if (Mod(A_Index, 3) == 0) {
-            currLogSlotY += 35
-            currLogSlotX -= 160
-        }
-
+        Sleep, 1950
         if(A_Index == 1) {
-            Sleep, 1250
+            Sleep, 1150
         }
-        Sleep, 1750
+        currLogSlotX += 40
     }
+    return
+
 }
 
 openBank() {

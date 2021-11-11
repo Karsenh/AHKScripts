@@ -1,7 +1,8 @@
-#Include, D:\Misc Development\AHKScripts\ImageCapture\SeersAgilityStart.ahk
-#Include, D:\Misc Development\AHKScripts\Agility\jobHandlers.ahk
+#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\Imgs\Agility\SeersAgilityStart.ahk
+#Include, D:\Misc Development\AHKScripts\Agility\Seers\jobHandlers.ahk
 #Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
 #Include, D:\Misc Development\AHKScripts\Utilities\Global-Coords.ahk
+#Include, D:\Misc Development\AHKScripts\Utilities\QOL.ahk
 #SingleInstance, Force
 CoordMode, Mouse, Relative
 SetWorkingDir, %A_ScriptDir%
@@ -26,6 +27,7 @@ Numpad0::
 return
 
 PgUp::
+    normalizeInterface()
     Loop {
         startCourse()
         obstacleTwoOfSix()
@@ -38,10 +40,6 @@ PgUp::
 return
 
 PgDn::
-    returnToStart()
-    ; clickAgilityMinimap()
-return
-
-NumpadAdd::
     Pause, Toggle
 return
+

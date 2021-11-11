@@ -1,8 +1,4 @@
-#SingleInstance, Force
-#Include, ..\..\Utilities\Anti-ban.ahk
-#Include, .\helpers.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
+#Include, .\Main.ahk
 
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
@@ -11,6 +7,9 @@ CoordMode, Mouse, Relative
 ringCharges := 0
 necklaceCharges := 0
 runCount := 0
+numPouches := 4
+Random, numRuns, 13, 15
+numRunsB4HouseTele := numRuns
 
 ; ✅
 startScript() {
@@ -43,34 +42,37 @@ bankCwars() {
     global ringCharges
     global necklaceCharges
     global runCount
+    global numPouches
 
-    ; ✅ Move to bank chest in cwars
     clickCwarsBankIcon()
 
-    ; ✅ Open bank
     clickCwarsBankChest()
 
-    ; ✅ Check jewelry charges / equip what is necessary
     checkJewelry()
 
-    ; ✅ Click chest to open bank and withdraw essence
     withdrawEss()
 
     Send, {Esc}
 
-    ; ✅ Close bank and fill pouches
-    clickPouches("fill")
+    ; If numPouches = 3 (global), fills all three pouches regularly, otherwise (if 4), fills first two then the next two below
+    clickPouches("fill", numPouches)
 
-    ; ✅ Reopen bank
     clickCwarsBankChest()
 
-    ; ✅ Withdraw essence again
     withdrawEss()
 
-    ; ✅ Close out of the bank interface
     Send, {Esc}
 
-    ; ✅ Teleport to Duel Arena
+    if (numPouches = 4) {
+        clickPouches("fill", numPouches)
+
+        clickCwarsBankChest()
+
+        withdrawEss()
+
+        Send, {Esc}
+    }
+
     teleportTo("da")
 
     return
@@ -102,6 +104,7 @@ craftLavaRunes() {
     global runCount
     global necklaceCharges
     global ringCharges
+    global numRunsB4HouseTele
 
     ; open mage tab & cast imbue
     castImbue()
@@ -110,12 +113,12 @@ craftLavaRunes() {
     craftLavas()
 
     ; Return to Cwars bank to start over
-    if (mod(runCount, 15) != 0) {
-        teleportTo("cw")
-    } else {
+    if (mod(runCount, numRunsB4HouseTele) = 0 And runCount > 0) {
         teleportTo("house")
         drinkFromPool()
         ; useOrnateFromPool("cw")
+        teleportTo("cw")
+    } else {
         teleportTo("cw")
     }
 

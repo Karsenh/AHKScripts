@@ -1,5 +1,5 @@
-#Include, D:\Misc Development\AHKScripts\ImageCapture\SeersAgilityStart.ahk
-#Include, D:\Misc Development\AHKScripts\Agility\helpers.ahk
+#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\Imgs\Agility\SeersAgilityStart.ahk
+#Include, D:\Misc Development\AHKScripts\Agility\Seers\helpers.ahk
 #Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
@@ -29,13 +29,13 @@ obstacleTwoOfSix() {
     seers2X := seersAgilityCoords["seers2X"]
     seers2Y := seersAgilityCoords["seers2Y"]
 
-    clickNextObstacleAndAlch(seers2X, seers2Y, highAlchDelay, 4, 7)
+    clickNextObstacleAndAlch(seers2X, seers2Y, highAlchDelay)
 }
 
 obstacleThreeOfSix() {
     global seersAgilityCoords
 
-    Random, highAlchDelay, 7150, 7225
+    Random, highAlchDelay, 7220, 7330
 
     ; ToolTip, % "High Alch Delay: " highAlchDelay
 
@@ -55,13 +55,13 @@ obstacleFourOfSix() {
     seers4X := seersAgilityCoords["seers4X"]
     seers4Y := seersAgilityCoords["seers4Y"]
 
-    clickNextObstacleAndAlch(seers4X, seers4Y, highAlchDelay, 35, 6)
+    clickNextObstacleAndAlch(seers4X, seers4Y, highAlchDelay, 15, 7)
 }
 
 obstacleFiveOfSix() {
     global seersAgilityCoords
 
-    Random, highAlchDelay, 2575, 2650
+    Random, highAlchDelay, 2950, 3125
 
     ; ToolTip, % "High Alch Delay: " highAlchDelay
 
@@ -74,7 +74,7 @@ obstacleFiveOfSix() {
 obstacleSixOfSix() {
     global seersAgilityCoords
 
-    Random, highAlchDelay, 1100, 1200
+    Random, highAlchDelay, 1200, 1300
 
     ; ToolTip, % "High Alch Delay: " highAlchDelay
 

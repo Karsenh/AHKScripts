@@ -23,7 +23,7 @@ highAlch(alchDelay) {
         Sleep, sleepDelay
         MouseClick, Left
     }
-    customMouseMove(inventoryCoords["spot8X"], inventoryCoords["spot8Y"], "fast", 8, 8)
+    customMouseMove(inventoryCoords["slot12X"], inventoryCoords["slot12Y"], "fast", 8, 8)
     Sleep, alchDelay
     MouseClick, Left
 }
@@ -84,7 +84,7 @@ teleportToSeers() {
     seersY := standardSpellCoords["seersTpY"]
 
     Random, clickDelay, 15, 35
-    Random, clickMiniMapDelay, 1850, 1950
+    Random, clickMiniMapDelay, 1920, 2000
 
     Send, {F2}
 

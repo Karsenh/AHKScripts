@@ -1,12 +1,15 @@
-#SingleInstance, Force
-#Include, ..\..\Utilities\QOL.ahk
-#Include, ..\..\Utilities\Global-Coords.ahk
 #Include, .\helpers.ahk
 #Include, .\jobHandlers.ahk
+
+#Include, ..\..\Utilities\QOL.ahk
+#Include, ..\..\Utilities\Global-Coords.ahk
+#Include, ..\..\Utilities\Anti-Ban.ahk
+
 #Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
 #Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
 #Include, ..\..\Utilities\ImageCapture\Imgs\Banking\checkPin.ahk
 
+#SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
 
@@ -55,7 +58,21 @@ Ins::
     ; clickDuelArenaMinimap()
     ; idleMouseMovements()
     ; withdrawEss()
-    teleportTo("house")
-    drinkFromPool()
+    ; teleportTo("house")
+    ; drinkFromPool()
     ; useOrnateFromPool("cw")
+    clickCwarsBankChest()
+    withdrawEss()
+    Send, {Esc}
+    clickPouches("fill", numPouches)
+    clickCwarsBankChest()
+    withdrawEss()
+    Send, {Esc}
+    if (numPouches = 4) {
+        clickPouches("fill", numPouches)
+        clickCwarsBankChest()
+        withdrawEss()
+        Send, {Esc}
+    }
+
 return
