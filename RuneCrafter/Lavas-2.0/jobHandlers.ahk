@@ -44,7 +44,8 @@ bankCwars() {
     global runCount
     global numPouches
 
-    clickCwarsBankIcon()
+
+    checkPouches()
 
     clickCwarsBankChest()
 
@@ -85,16 +86,16 @@ moveToAltar() {
     ; click mysterious ruins to enter -> sleep
     customMouseMove(290, 130, "fast", 2, 2)
     MouseClick, Left
-    Random, clickRuinsSleep, 2300, 2400
+    Random, clickRuinsSleep, 1900, 1800
 
     offsetTime := idleMouseMovements()
 
     ; Move mouse to tile near fire altar
-    customMouseMove(492, 332)
+    customMouseMove(673, 145, "fast", 1, 0)
     Sleep, clickRuinsSleep - offsetTime
     ; click the tile nearest the fire-altar to move precisely to spot near fire altar -> sleep
     MouseClick, Left
-    Random, moveToAltarSleep, 2200, 2300
+    Random, moveToAltarSleep, 2000, 2100
     Sleep, moveToAltarSleep
 
     return
@@ -124,9 +125,9 @@ craftLavaRunes() {
 
     runCount += 1
 
-    ToolTip, % "NecklaceCharges = " necklaceCharges, 0, 0
-    ToolTip, % "RingCharges = " ringCharges, 0, 30 
     ToolTip, % "Run Count = " runCount, 0, 60 
+
+    clickCwarsBankIcon()
 
     return
 }

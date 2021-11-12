@@ -67,33 +67,33 @@ randomMouseMoves(sleepMin=200, sleepMax=650) {
 
 }
 
-customMouseMovement(X, Y, isSlow=False, isTight=False) {
+; customMouseMovement(X, Y, isSlow=False, isTight=False) {
 
-    if (isTight) {
-        variance := randVariances()
-        Random, pixelDev, -1, 1
+;     if (isTight) {
+;         variance := randVariances()
+;         Random, pixelDev, -1, 1
 
-        if (isSlow) {
-            mouseSpeed := variance["mouseSpeedSlow"]
-            MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
-        } else {
-            mouseSpeed := variance["mouseSpeedFast"]
-            MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
-        }
-    } else {
-        Random, loopIterations, 1, 3
+;         if (isSlow) {
+;             mouseSpeed := variance["mouseSpeedSlow"]
+;             MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
+;         } else {
+;             mouseSpeed := variance["mouseSpeedFast"]
+;             MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
+;         }
+;     } else {
+;         Random, loopIterations, 1, 3
 
-        Loop, %loopIterations% {
-            variance := randVariances()
-            pixelDev := variance["pixelDev"]
+;         Loop, %loopIterations% {
+;             variance := randVariances()
+;             pixelDev := variance["pixelDev"]
 
-            if (isSlow) {
-                mouseSpeed := variance["mouseSpeedSlow"]
-                MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
-            } else {
-                mouseSpeed := variance["mouseSpeedFast"]
-                MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
-            }
-        }
-    }
-}
+;             if (isSlow) {
+;                 mouseSpeed := variance["mouseSpeedSlow"]
+;                 MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
+;             } else {
+;                 mouseSpeed := variance["mouseSpeedFast"]
+;                 MouseMove, X+pixelDev, Y+pixelDev, mouseSpeed
+;             }
+;         }
+;     }
+; }
