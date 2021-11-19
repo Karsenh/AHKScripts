@@ -22,7 +22,37 @@ checkJewelry() {
 }
 
 checkPouches() {
-    
+    Send, {F1}
+    if (checkGiantPouch()) {
+        ; Open Magic tab
+        Send, {F2}
+        ; Move mouse to npc contact spell
+        customMouseMove(724, 256, "fast", 3, 3)
+        ; Right click
+        MouseClick, Right
+        ; Select Dark Mage (second option)
+        MouseGetPos, currX, currY
+        customMouseMove(currX, currY + 38, "fastest", 5, 2)
+        MouseClick, Left
+
+        Random, rMageDelay, 5250, 5350
+        Sleep, rMageDelay
+
+        Send, {Space}
+
+        Random, chatDelay, 1000, 1100
+        Sleep, chatDelay
+
+        Send, {2}
+
+        Random, chatDelay, 1000, 1100
+        Sleep, chatDelay
+
+        Send, {Space}
+
+        return
+    }
+    return
 }
 
 withdrawAndEquipJewelry(jewelryType="necklace") {
@@ -123,7 +153,6 @@ teleportTo(location) {
 
         Sleep, 2000
     }
-    ToolTip, % "Ring charges = " ringCharges
 
     offsetTime := idleMouseMovements()
 
@@ -222,7 +251,7 @@ useEarthsOnAltar() {
     global inventoryCoords
     customMouseMove(inventoryCoords["slot17X"], inventoryCoords["slot17Y"])
     MouseClick, Left
-    customMouseMove(303, 208, "fast", 1, 1)
+    customMouseMove(290, 220, "fast", 2, 2)
     MouseClick, Left
     necklaceCharges -= 1
 

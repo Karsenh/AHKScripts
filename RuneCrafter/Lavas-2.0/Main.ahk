@@ -7,7 +7,7 @@
 
 #Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
 #Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Banking\checkPin.ahk
+#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\GiantPouch.ahk
 
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
@@ -61,18 +61,8 @@ Ins::
     ; teleportTo("house")
     ; drinkFromPool()
     ; useOrnateFromPool("cw")
-    clickCwarsBankChest()
-    withdrawEss()
-    Send, {Esc}
-    clickPouches("fill", numPouches)
-    clickCwarsBankChest()
-    withdrawEss()
-    Send, {Esc}
-    if (numPouches = 4) {
-        clickPouches("fill", numPouches)
-        clickCwarsBankChest()
-        withdrawEss()
-        Send, {Esc}
-    }
+    ; clickGiantPouch()
+    ; checkPouches()
+    clickCwarsBankIcon()
 
 return
