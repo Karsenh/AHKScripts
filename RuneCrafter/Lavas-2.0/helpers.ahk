@@ -11,14 +11,18 @@ checkJewelry() {
     global ringCharges
     global necklaceCharges
 
-    if (ringCharges == 0 || ringCharges == 1) {
+    if (ringCharges <= 0 || ringCharges == 1) {
         withdrawAndEquipJewelry("ring")
     }
 
-    if (necklaceCharges == 0) {
+    if (necklaceCharges <= 0) {
         withdrawAndEquipJewelry("necklace")
     }
     return
+}
+
+checkPouches() {
+    
 }
 
 withdrawAndEquipJewelry(jewelryType="necklace") {
