@@ -1,16 +1,5 @@
-#Include, .\helpers.ahk
 #Include, .\jobHandlers.ahk
-
-#Include, ..\..\Utilities\QOL.ahk
-#Include, ..\..\Utilities\Global-Coords.ahk
-#Include, ..\..\Utilities\Anti-Ban.ahk
-
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\GiantPouch.ahk
-
 #SingleInstance, Force
-SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
 
 global inventoryCoords

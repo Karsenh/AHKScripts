@@ -1,6 +1,5 @@
-#Include, C:\Users\OSRS\AHK\AHKScripts\Utilities\Anti-ban.ahk
+#Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
 #SingleInstance, Force
-SetWorkingDir, %A_ScriptDir%
 ;/*
 ;===========================================
 ;  FindText - Capture screen image into text and then find it

@@ -1,6 +1,5 @@
-#Include, ..\..\ImgCap.ahk
-
-#SingleInstance, Force
+#Include, %A_LineFile%\..\..\..\..\Anti-ban.ahk
+#Include, %A_LineFile%\..\..\..\ImgCap.ahk
 SetWorkingDir, %A_ScriptDir%
 
 clickAltarImg() {

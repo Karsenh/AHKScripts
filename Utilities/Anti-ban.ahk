@@ -1,4 +1,3 @@
-SetWorkingDir, %A_ScriptDir%
 #SingleInstance, Force
 CoordMode, Mouse, Relative
 

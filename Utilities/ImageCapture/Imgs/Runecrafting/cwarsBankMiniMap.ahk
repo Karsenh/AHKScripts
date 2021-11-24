@@ -1,5 +1,7 @@
-#Include, C:\Users\OSRS\AHK\AHKScripts\Utilities\Anti-ban.ahk
-#Include, C:\Users\OSRS\AHK\AHKScripts\Utilities\ImageCapture\ImgCap.ahk
+#Include, %A_LineFile%\..\..\..\..\Anti-ban.ahk
+#Include, %A_LineFile%\..\..\..\ImgCap.ahk
+; #Include, ..\..\..\Anti-ban.ahk
+; #Include, ..\..\ImgCap.ahk
 
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%

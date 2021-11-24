@@ -1,6 +1,8 @@
-#Include, .\Main.ahk
+#Include, ..\..\Utilities\QOL.ahk
+#Include, ..\..\Utilities\Anti-ban.ahk
+#Include, ..\..\Utilities\Global-Coords.ahk
 
-SetWorkingDir, %A_ScriptDir%
+#Include, .\helpers.ahk
 CoordMode, Mouse, Relative
 
 ; Store charges to know when to replace jewelry
@@ -43,7 +45,6 @@ bankCwars() {
     global necklaceCharges
     global runCount
     global numPouches
-
 
     checkPouches()
 

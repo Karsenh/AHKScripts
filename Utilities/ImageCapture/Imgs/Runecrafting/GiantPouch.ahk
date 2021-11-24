@@ -1,5 +1,5 @@
-#Include, C:\Users\OSRS\AHK\AHKScripts\Utilities\ImageCapture\ImgCap.ahk
-#SingleInstance, Force
+#Include, %A_LineFile%\..\..\..\..\Anti-ban.ahk
+#Include, %A_LineFile%\..\..\..\ImgCap.ahk
 SetWorkingDir, %A_ScriptDir%
 
 checkGiantPouch() {
@@ -9,10 +9,10 @@ checkGiantPouch() {
 
     if (ok:=FindText(X, Y, 148-150000, 387-150000, 148+150000, 387+150000, 0, 0, Text))
     {
-    ; FindText.Click(X, Y, "L")
+        ; FindText.Click(X, Y, "L")
         return True
     } else {
         return False
     }
- return
+    return
 }

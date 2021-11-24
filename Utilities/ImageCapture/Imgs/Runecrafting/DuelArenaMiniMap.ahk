@@ -1,6 +1,5 @@
-#Include, C:\Users\OSRS\AHK\AHKScripts\Utilities\ImageCapture\ImgCap.ahk
-#SingleInstance, Force
-SetWorkingDir, %A_ScriptDir%
+#Include, %A_LineFile%\..\..\..\..\Anti-ban.ahk
+#Include, %A_LineFile%\..\..\..\ImgCap.ahk
 
 clickDuelArenaMinimap() {
     Random, ruinsClickDelay, 4900, 4800
@@ -26,7 +25,6 @@ clickDuelArenaMinimap() {
             controlVar := True
         }
     }
-
 
 }
 

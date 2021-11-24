@@ -1,9 +1,7 @@
-
-#Include C:\Users\OSRS\AHK\AHKScripts\Utilities\Anti-ban.ahk
-#Include C:\Users\OSRS\AHK\AHKScripts\Utilities\Global-Coords.ahk
+#Include, %A_LineFile% \..\Anti-ban.ahk
+#Include, %A_LineFile% \..\Global-Coords.ahk
 
 #SingleInstance, Force
-SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
 
 ; ---- IDEAS -----
