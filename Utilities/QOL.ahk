@@ -73,3 +73,23 @@ dropInventItems(isInputEnabled=False, startSlot=1, endSlot=28) {
     return
 }
 
+teleTo(location="home", SleepTime=3850) {
+    global inventoryCoords
+
+    Random, randInterval, 15, 115
+    Random, secondRandInterval, 15, 115
+
+    if (location == "home") {
+        customMouseMove(inventoryCoords["slot1X"], inventoryCoords["slot1Y"])
+        Send, {ShiftDown}
+        Sleep, randInterval
+        customMouseClick()
+        Sleep, secondRandInterval
+        Send, {ShiftUp}
+    }
+
+    Sleep SleepTime
+    
+    return
+}
+

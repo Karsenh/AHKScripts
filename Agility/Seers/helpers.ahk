@@ -1,4 +1,4 @@
-#Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
+#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\GlobalLibrary.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative

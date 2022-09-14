@@ -1,12 +1,12 @@
-#Include, D:\Misc Development\AHKScripts\Utilities\ImageCapture\Imgs\Agility\SeersAgilityStart.ahk
-#Include, D:\Misc Development\AHKScripts\Agility\Seers\helpers.ahk
-#Include, D:\Misc Development\AHKScripts\Utilities\Anti-ban.ahk
+#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\ImageCapture\Imgs\Agility\SeersAgilityStart.ahk
+#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Agility\Seers\helpers.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
 
 startCourse() {
     global seersAgilityCoords
+    global inventoryCoords
     Random, highAlchDelay, 2350, 2550
 
     ; ToolTip, % "High Alch Delay: " highAlchDelay
@@ -15,6 +15,16 @@ startCourse() {
     seers1Y := seersAgilityCoords["seers1Y"]
 
     clickAgilityMinimap()
+
+    Send, {f2}
+    customMouseMove(730, 340, "fastest", 7, 9)
+    customMouseClick()
+
+    customMouseMove(inventoryCoords["slot12X"], inventoryCoords["slot12Y"], "fastest")
+    customMouseClick()
+
+    Random, rSleep, 2350, 2475
+    Sleep, rSleep
 
     clickNextObstacleAndAlch(seers1X, seers1Y, highAlchDelay)
 }

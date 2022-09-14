@@ -1,4 +1,4 @@
-#Include, D:\Misc Development\AHKScripts\Prayer\GildedAltar\jobHandler.ahk
+#Include, ./jobHandler.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative

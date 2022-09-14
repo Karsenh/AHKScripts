@@ -87,7 +87,7 @@ moveToAltar() {
     ; click mysterious ruins to enter -> sleep
     customMouseMove(290, 130, "fast", 2, 2)
     MouseClick, Left
-    Random, clickRuinsSleep, 1900, 1800
+    Random, clickRuinsSleep, 2300, 2400
 
     offsetTime := idleMouseMovements()
 

@@ -28,11 +28,11 @@ customMouseMove(endX, endY, speed="fast", xRange=4, yRange=4) {
 }
 
 customMouseClick(clickDirection="left") {
-    Random, xCoordDev, 1, 16
-    Random, yCoordDev, 1, 16
-    Random, moveDelay, 1, 50
+    Random, xCoordDev, -7, 7
+    Random, yCoordDev, -7, 7
+    Random, moveDelay, 2, 23
     MouseGetPos, currX, currY
-    Random, mouseSpeed, 200, 275
+    Random, mouseSpeed, 3, 27
 
     if (clickDirection == "left") {
         MouseClick, Left
