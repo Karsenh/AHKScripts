@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\Anti-ban.ahk
+=======
+#Include, %A_LineFile%\..\..\Anti-ban.ahk
+>>>>>>> 2219ae8ba6faa0a63462f7ceee73563413bc8b26
 #SingleInstance, Force
 ;/*
 ;===========================================
