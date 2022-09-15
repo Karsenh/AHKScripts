@@ -1,11 +1,5 @@
-#Include, ..\..\Utilities\QOL.ahk
-#Include, ..\..\Utilities\Anti-ban.ahk
-#Include, ..\..\Utilities\Global-Coords.ahk
+#Include, ../../Utilities/GlobalLibrary.ahk
 
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\FireAltarImg.ahk
-#Include, ..\..\Utilities\ImageCapture\Imgs\Runecrafting\GiantPouch.ahk
 CoordMode, Mouse, Relative
 
 pouchGroup := 1

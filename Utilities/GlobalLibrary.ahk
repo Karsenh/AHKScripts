@@ -1,6 +1,10 @@
-#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\Anti-ban.ahk
-#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\QOL.ahk
-#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\PoHInteractions.ahk
-#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\Global-Coords.ahk
-#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\Interface_Interactions\Prayer.ahk
-#Include, D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\Interface_Interactions\MiniMapButtons.ahk
+; #Include, %A_WorkingDir%
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Runecrafting\cwarsBankMiniMap.ahk
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Runecrafting\DuelArenaMiniMap.ahk
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Runecrafting\FireAltarImg.ahk
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Runecrafting\GiantPouch.ahk
+#Include, %A_LineFile%\..\QOL.ahk
+#Include, %A_LineFile%\..\PoHInteractions.ahk
+#Include, %A_LineFile%\..\Global-Coords.ahk
+#Include, %A_LineFile%\..\Interface_Interactions\Prayer.ahk
+#Include, %A_LineFile%\..\Interface_Interactions\MiniMapButtons.ahk

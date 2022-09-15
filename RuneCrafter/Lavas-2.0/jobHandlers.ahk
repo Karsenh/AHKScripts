@@ -1,8 +1,5 @@
-#Include, ..\..\Utilities\QOL.ahk
-#Include, ..\..\Utilities\Anti-ban.ahk
-#Include, ..\..\Utilities\Global-Coords.ahk
-
 #Include, .\helpers.ahk
+#Include, ../../Utilities/GlobalLibrary.ahk
 CoordMode, Mouse, Relative
 
 ; Store charges to know when to replace jewelry
