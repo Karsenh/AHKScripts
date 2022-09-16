@@ -86,7 +86,7 @@ getBonesFromCwars() {
     ; esc to close bank - SLEEP
     Send, {esc}
 
-    Random, rRemmyTeleDelay, 17, 187
+    Random, rRemmyTeleDelay, 123, 212
     Sleep, rRemmyTeleDelay
 
 }
