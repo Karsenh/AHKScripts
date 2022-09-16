@@ -1,4 +1,3 @@
-#Include, ../../Utilities/ImageCapture/Imgs/Prayer/CwarsBank.ahk
 #Include, ./jobHandlers.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%

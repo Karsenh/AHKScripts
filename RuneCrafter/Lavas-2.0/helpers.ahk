@@ -1,4 +1,4 @@
-#Include, ../../Utilities/GlobalLibrary.ahk
+#Include, %A_LineFile%\..\..\..\Utilities\GlobalLibrary.ahk
 
 CoordMode, Mouse, Relative
 

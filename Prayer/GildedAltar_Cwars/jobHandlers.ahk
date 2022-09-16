@@ -1,5 +1,4 @@
 #Include, ../../Utilities/GlobalLibrary.ahk
-#Include, ../../Utilities/ImageCapture/Imgs/Prayer/CwarsBank.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
@@ -22,7 +21,7 @@ useBonesOnAltar() {
         Sleep, rBoneClickSleep
         customMouseMove(438, 275, "fastest", 43, 67)
         customMouseClick()
-        
+
         Sleep, rAltarClickSleep
         i++
     }
@@ -45,7 +44,6 @@ getBonesFromCwars() {
     offset1 := idleMouseMovements()
     Random, conTeleSleep, 5000, 5100
     Sleep, conTeleSleep - offset1
-
 
     ; move to ornate jewelry box - SLEEP
     customMouseMove(662, 148, "fast", 1, 1)
@@ -70,7 +68,6 @@ getBonesFromCwars() {
 
     Random, moveToCwarsBankSleep, 4579, 4799
     Sleep, moveToCwarsBankSleep - offset4
-
 
     ; left click cwars bank chest to open - SLEEP
     customMouseMove(117, 254, "fast", 37, 43)

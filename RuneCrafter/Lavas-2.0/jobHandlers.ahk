@@ -1,5 +1,7 @@
-#Include, .\helpers.ahk
-#Include, ../../Utilities/GlobalLibrary.ahk
+; #Include, ./helpers.ahk
+#Include, %A_LineFile%\..\helpers.ahk
+#Include, %A_LineFile%\..\..\..\Utilities\GlobalLibrary.ahk
+
 CoordMode, Mouse, Relative
 
 ; Store charges to know when to replace jewelry
@@ -9,6 +11,15 @@ runCount := 0
 numPouches := 4
 Random, numRuns, 13, 15
 numRunsB4HouseTele := numRuns
+
+Invoke_RuneCrafting_Lavas() {
+    startScript()
+    Loop {
+        bankCwars()
+        moveToAltar()
+        craftLavaRunes()
+    }
+}
 
 ; ✅
 startScript() {

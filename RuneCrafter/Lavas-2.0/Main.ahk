@@ -20,38 +20,12 @@ PgDn::
 return
 
 ; Get Mouse Coords
-NumpadEnter::
-    debugMouseCoords()
-return
+; NumpadEnter::
+;     debugMouseCoords()
+; return
 
 ; Debugging
-Ins::
-    ; startScript()
-    ; bankCwars()
-    ; moveToAltar()
-    ; craftLavaRunes()
-    ; customMouseMove(280, 200, "slow", 2, 2)
-    ; openBank()
-    ; withdrawAndEquipJewelry()
-    ; withdrawAndEquipJewelry("ring")
-    ; startScript()
-    ; clickCwarsBankChest()
-    ; checkJewelry()
-    ; withdrawEss()
-    ; teleportTo("da")
-    ; teleportTo("cw")
-    ; clickPouches("fill")
-    ; clickPouches("empty")
-    ; moveToAltar()
+Numpad0::
     ; clickCwarsBankIcon()
-    ; clickDuelArenaMinimap()
-    ; idleMouseMovements()
-    ; withdrawEss()
-    ; teleportTo("house")
-    ; drinkFromPool()
-    ; useOrnateFromPool("cw")
-    ; clickGiantPouch()
-    ; checkPouches()
-    clickCwarsBankIcon()
-
+    clickDuelArenaMinimap()
 return
