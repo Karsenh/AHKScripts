@@ -66,14 +66,14 @@ getBonesFromCwars() {
     ; customMouseMove(633, 86)
     ; customMouseClick()
 
-    Random, moveToCwarsBankSleep, 4579, 4799
+    Random, moveToCwarsBankSleep, 4713, 4887
     Sleep, moveToCwarsBankSleep - offset4
 
     ; left click cwars bank chest to open - SLEEP
     customMouseMove(117, 254, "fast", 37, 43)
     customMouseClick()
 
-    Random, openChestDelay, 1777, 1934
+    Random, openChestDelay, 1579, 1712
     Sleep, openChestDelay
 
     ; left click bones to withdraw full invent
