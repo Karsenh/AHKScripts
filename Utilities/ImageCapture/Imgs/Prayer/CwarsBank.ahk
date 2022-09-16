@@ -1,12 +1,10 @@
 #Include, %A_LineFile%\..\..\..\..\Anti-ban.ahk
 #Include, %A_LineFile%\..\..\..\ImgCap.ahk
 
-
-
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 
-clickCwarsBankIcon() {
+clickCwarsBankDuringPrayer() {
 
     t1:=A_TickCount, X:=Y:=""
 

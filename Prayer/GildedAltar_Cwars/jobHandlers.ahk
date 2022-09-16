@@ -62,7 +62,7 @@ getBonesFromCwars() {
     Sleep, ornateTeleSleep - offset3
 
     ; move to cwars bank - SLEEP
-    clickCwarsBankIcon()
+    clickCwarsBankDuringPrayer()
     ; customMouseMove(633, 86)
     ; customMouseClick()
 
