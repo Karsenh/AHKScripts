@@ -73,7 +73,7 @@ getBonesFromCwars() {
     customMouseMove(117, 254, "fast", 37, 43)
     customMouseClick()
 
-    Random, openChestDelay, 1579, 1600
+    Random, openChestDelay, 1777, 1934
     Sleep, openChestDelay
 
     ; left click bones to withdraw full invent
