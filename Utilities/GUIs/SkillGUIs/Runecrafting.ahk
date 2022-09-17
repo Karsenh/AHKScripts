@@ -9,7 +9,7 @@ GUI, show
 return
 
 Rcing1:
-    Run, %A_ScriptDir%\..\..\Minigames\GuardiansOfTheRift\Gotr_Main.ahk
+    Run, %A_ScriptDir%\..\..\..\RuneCrafter\Lavas-2.0\Main.ahk
 return
 
 Rcing2:

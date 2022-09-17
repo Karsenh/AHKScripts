@@ -1,4 +1,4 @@
-#Include, %A_LineFile%\..\..\GlobalLibrary.ahk
+#Include, %A_ScriptDir%\..\Utilities\GlobalLibrary.ahk
 #SingleInstance, Force
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
@@ -25,7 +25,7 @@ PgUp::
         Sleep, 100
         MouseClick, Left
         Sleep, 5500
-        if (IsInventFull()) {
+        if (isInventoryFull()) {
             dropInventItems(False, 2, 28)
         }
     }

@@ -9,7 +9,7 @@ GUI, show
 return
 
 MiniGames1:
-    Run, %A_ScriptDir%\..\..\Minigames\GuardiansOfTheRift\Gotr_Main.ahk
+    Run, %A_ScriptDir%\..\..\..\Minigames\GuardiansOfTheRift\Gotr_Main.ahk
     GUI, hide
 return
 
