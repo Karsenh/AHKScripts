@@ -12,6 +12,6 @@ ScriptOne:
 return
 
 ScriptTwo:
-    run %A_ScriptDir%\..\GlobalLibrary.ahk
+    run %A_LineFile%\..\..\GlobalLibrary.ahk
     GUI, Hide
 return
