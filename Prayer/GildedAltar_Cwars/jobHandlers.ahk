@@ -97,7 +97,7 @@ moveBackToWorklessAltar() {
     MouseGetPos, currX, currY
     customMouseMove(currX, currY+56, "fastest", 9, 2)
     customMouseClick()
-    Random, capeTeleSleep, 1853, 2023
+    Random, capeTeleSleep, 1314, 1498
     Sleep, capeTeleSleep
     Send, {2}
     offsetTime := idleMouseMovements()
