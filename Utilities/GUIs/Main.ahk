@@ -16,7 +16,6 @@ ScriptOne:
 return
 
 ScriptTwo:
-    MsgBox, % "Select color with ` "
     run %A_ScriptDir%\SkillGUIs\Woodcutting.ahk
     GUI, Hide
 return

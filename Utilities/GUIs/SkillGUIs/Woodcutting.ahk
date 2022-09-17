@@ -11,6 +11,7 @@ return
 
 Rcing1:
     Run, %A_ScriptDir%\..\..\..\ColorClicker\ColorClicker.ahk
+    GUI, Hide
 return
 
 Rcing2:
