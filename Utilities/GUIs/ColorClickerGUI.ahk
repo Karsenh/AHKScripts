@@ -24,8 +24,8 @@ PgUp::
         MouseMove, OutputVarX, OutputVarY
         Sleep, 100
         MouseClick, Left
-        Sleep, 6000
-        if (CheckForFullInventoryOfLogs()) {
+        Sleep, 5500
+        if (IsInventFull()) {
             dropInventItems(False, 2, 28)
         }
     }
@@ -37,4 +37,3 @@ return
 Esc::ExitApp
 
 return
-

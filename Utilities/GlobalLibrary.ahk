@@ -9,6 +9,7 @@
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Minigames\GotR\shouldEmptyPouches.ahk
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Woodcutting\ColorClicker\FullLogInvent.ahk
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Woodcutting\ColorClicker\ThreeLogCheck.ahk
 
 #Include, %A_LineFile%\..\QOL.ahk
 #Include, %A_LineFile%\..\PoHInteractions.ahk

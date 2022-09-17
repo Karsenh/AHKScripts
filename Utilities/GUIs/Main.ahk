@@ -13,7 +13,7 @@ ScriptOne:
 return
 
 ScriptTwo:
-    MsgBox, "Test"
+    MsgBox, % "Select color with `"
     run %A_ScriptDir%\ColorClickerGUI.ahk
     GUI, Hide
 return
