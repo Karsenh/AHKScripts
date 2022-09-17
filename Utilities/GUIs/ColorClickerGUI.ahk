@@ -19,19 +19,8 @@ ColorClicker:
 return
 
 PgUp::
-    logCount := 0
-    lastMouseX := 0
-    lastMouseY := 0
     Loop {
         PixelSearch, OutputVarX, OutputVarY, 9, 30, 517, 361, findColor, 1, Fast
-        if (OutputVarX > lastMouseX + 10 || OutputVarX < lastMouseX + 10)
-        {
-            ; New tree - increase log count
-            logCount++
-            ToolTip, % "New tree clicked. " logCount " logs collected."
-            lastMouseX := OutputVarX
-            lastMouseY := OutputVarY
-        }
         MouseMove, OutputVarX, OutputVarY
         Sleep, 100
         MouseClick, Left
