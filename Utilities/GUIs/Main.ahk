@@ -12,6 +12,6 @@ ScriptOne:
 return
 
 ScriptTwo:
-    run %A_LineFile%\..\..\GlobalLibrary.ahk
+    run %A_ScriptDir%\ColorClickerGUI.ahk
     GUI, Hide
 return
