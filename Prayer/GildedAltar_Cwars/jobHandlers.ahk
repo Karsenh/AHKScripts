@@ -58,7 +58,7 @@ getBonesFromCwars() {
     customMouseClick()
 
     offset3 := idleMouseMovements()
-    Random, ornateTeleSleep, 4000, 4100
+    Random, ornateTeleSleep, 3947, 4102
     Sleep, ornateTeleSleep - offset3
 
     ; move to cwars bank - SLEEP
@@ -101,10 +101,10 @@ moveBackToWorklessAltar() {
     Sleep, capeTeleSleep
     Send, {2}
     offsetTime := idleMouseMovements()
-    Random, remmyTeleSleep, 4000, 4100
+    Random, remmyTeleSleep, 4017, 4109
     Sleep, remmyTeleSleep - offsetTime
 
-    ; left click teleport
+    ; left click ad stand teleport to workless' home
     customMouseMove(510, 59, "fast", 3, 13)
     customMouseClick()
 
