@@ -66,7 +66,8 @@ getBonesFromCwars() {
     ; customMouseMove(633, 86)
     ; customMouseClick()
 
-    Random, moveToCwarsBankSleep, 4713, 4887
+    offset4 := idleMouseMovements()
+    Random, moveToCwarsBankSleep, 4997, 5212
     Sleep, moveToCwarsBankSleep - offset4
 
     ; left click cwars bank chest to open - SLEEP
