@@ -9,14 +9,10 @@ GUI, show
 return
 
 ScriptOne:
-    run D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\GUIs\test.ahk
+    MsgBox, "test"
 return
 
 ScriptTwo:
-    run D:\Dev\Personal_dev\My_AHK-dev\AHKScripts\Utilities\GUIs\ColorClickerGUI.ahk
+    run %A_LineFile%\..\GlobalLibrary.ahk
     GUI, Hide
-return
-
-ScriptThree:
-    run scriptthree.ahk
 return
