@@ -6,6 +6,8 @@
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Prayer\CwarsBank.ahk
 
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Woodcutting\ColorClicker\FullLogInvent.ahk
+
 #Include, %A_LineFile%\..\QOL.ahk
 #Include, %A_LineFile%\..\PoHInteractions.ahk
 #Include, %A_LineFile%\..\Global-Coords.ahk

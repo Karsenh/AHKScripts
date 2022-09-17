@@ -36,7 +36,7 @@ PgUp::
         Sleep, 100
         MouseClick, Left
         Sleep, 10000
-        if (logCount == 28) {
+        if (CheckForFullInventoryOfLogs()) {
             dropInventItems(False, 1, 28)
         }
     }
