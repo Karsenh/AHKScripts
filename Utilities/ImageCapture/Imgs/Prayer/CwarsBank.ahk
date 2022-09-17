@@ -17,7 +17,7 @@ clickCwarsBankDuringPrayer() {
         ToolTip
         if (ok:=FindText(X, Y, 925-150000, 150-150000, 925+150000, 150+150000, 0, 0, Text))
         {
-            Random, clickBankChestDelay, 3400, 3500
+            Random, clickBankChestDelay, 4023, 4127
             FindText.Click(X, Y + 4, "L")
             offsetTime := idleMouseMovements()
             Sleep, clickBankChestDelay-offsetTime

@@ -50,7 +50,7 @@ getBonesFromCwars() {
     customMouseClick()
 
     offset2 := idleMouseMovements()
-    Random, moveToOrnateSleep, 4779, 5100
+    Random, moveToOrnateSleep, 4673, 5100
     Sleep, moveToOrnateSleep - offset2
 
     ; left click ornate jewelry box - SLEEP (teleports to cwars)
@@ -66,14 +66,11 @@ getBonesFromCwars() {
     ; customMouseMove(633, 86)
     ; customMouseClick()
 
-    Random, moveToCwarsBankSleep, 3490, 3612
-    Sleep, moveToCwarsBankSleep
-
     ; left click cwars bank chest to open - SLEEP
     customMouseMove(117, 254, "fast", 37, 43)
     customMouseClick()
 
-    Random, openChestSleep, 1579, 1712
+    Random, openChestSleep, 1023, 1209
     Sleep, openChestSleep
 
     ; left click bones to withdraw full invent
