@@ -15,3 +15,5 @@ ScriptTwo:
     run %A_ScriptDir%\ColorClickerGUI.ahk
     GUI, Hide
 return
+
+ESC::ExitApp
