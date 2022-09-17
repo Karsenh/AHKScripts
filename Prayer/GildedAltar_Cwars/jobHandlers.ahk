@@ -95,7 +95,7 @@ moveBackToWorklessAltar() {
     customMouseMove(611, 293)
     customMouseClick("right")
     MouseGetPos, currX, currY
-    customMouseMove(currX, currY+70, "fastest", 9, 3)
+    customMouseMove(currX, currY+55, "fastest", 9, 3)
     customMouseClick()
     Random, capeTeleSleep, 1314, 1498
     Sleep, capeTeleSleep
