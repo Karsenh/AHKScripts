@@ -66,7 +66,7 @@ getBonesFromCwars() {
     ; customMouseMove(633, 86)
     ; customMouseClick()
 
-    Random, moveToCwarsBankSleep, 4121, 4201
+    Random, moveToCwarsBankSleep, 3490, 3612
     Sleep, moveToCwarsBankSleep
 
     ; left click cwars bank chest to open - SLEEP
@@ -99,7 +99,7 @@ moveBackToWorklessAltar() {
     customMouseClick("right")
     customMouseMove(610, 347, "fastest", 50, 4)
     customMouseClick()
-    Random, capeTeleSleep, 2098, 2192
+    Random, capeTeleSleep, 1853, 2023
     Sleep, capeTeleSleep
     Send, {2}
     offsetTime := idleMouseMovements()
