@@ -44,9 +44,8 @@ return
 PgDn::
     Pause, Toggle
 return
-Esc::
-ExitApp
-return
+
+Esc::ExitApp
 
 return
 
