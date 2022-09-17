@@ -110,7 +110,7 @@ moveBackToWorklessAltar() {
     customMouseMove(510, 59, "fast", 3, 13)
     customMouseClick()
 
-    Random, adClickSleep, 4450, 4679
+    Random, adClickSleep, 4603, 7801
     offsetTime2 := idleMouseMovements()
     Sleep, adClickSleep - offsetTime2
 
@@ -118,7 +118,7 @@ moveBackToWorklessAltar() {
     customMouseClick()
 
     altarOffsetTime := idleMouseMovements()
-    Random, rMoveFromPortalToAltarSleep, 3400, 3600
+    Random, rMoveFromPortalToAltarSleep, 3443, 3601
     Sleep, rMoveFromPortalToAltarSleep - altarOffsetTime
 
 }
