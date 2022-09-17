@@ -9,12 +9,7 @@ GUI, show
 return
 
 Rcing1:
-`::
-    MsgBox, "Getting color..."
-    MouseGetPos, currX, currY
-    PixelGetColor, OutputVar, currX, currY
-    MsgBox, % "Pixel color: " OutputVar
-return
+    Run, %A_ScriptDir%\..\..\Minigames\GuardiansOfTheRift\Gotr_Main.ahk
 return
 
 Rcing2:

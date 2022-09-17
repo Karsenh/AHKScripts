@@ -26,7 +26,7 @@ PgUp::
         MouseClick, Left
         Sleep, 6000
         if (CheckForFullInventoryOfLogs()) {
-            dropInventItems(False, 1, 28)
+            dropInventItems(False, 2, 28)
         }
     }
 return

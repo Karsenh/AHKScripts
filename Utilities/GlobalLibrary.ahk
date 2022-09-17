@@ -6,6 +6,8 @@
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Prayer\CwarsBank.ahk
 
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Minigames\GotR\shouldEmptyPouches.ahk
+
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Woodcutting\ColorClicker\FullLogInvent.ahk
 
 #Include, %A_LineFile%\..\QOL.ahk
