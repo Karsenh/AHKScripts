@@ -24,7 +24,7 @@ PgUp::
         MouseMove, OutputVarX, OutputVarY
         Sleep, 100
         MouseClick, Left
-        Sleep, 5500
+        Sleep, 10000
         if (isInventoryFull()) {
             dropInventItems(False, 2, 28)
         }
