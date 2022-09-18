@@ -68,7 +68,7 @@ make14Pots() {
 
     Send, {Space}
 
-    Random, rWaitForPots, 10000, 12000
+    Random, rWaitForPots, 16789, 17221
     Sleep, rWaitForPots
 
     return
