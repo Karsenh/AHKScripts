@@ -12,8 +12,14 @@ PgDn::
     Pause, Toggle
 return
 
-`::
+PgUp::
     Loop {
+        bank()
         make14Pots()
     }
 return
+
+`::
+    getPixelColor()
+return
+

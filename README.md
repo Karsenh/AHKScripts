@@ -80,6 +80,15 @@ Mini-Games
 
 A. Guardians of the Rift (helper)
 
+General:
+
+A. Mouse-Sequence-Recorder
+B. Color-Clicker
+C.
+
 # NOTES:
 
 1. Make GUI look like skills tab
+2. integrate failsafe found here to check for exp also:
+   https://www.youtube.com/watch?v=x6-YcHGztzU&ab_channel=Nom
+3. integrate 6 hr logout workaround

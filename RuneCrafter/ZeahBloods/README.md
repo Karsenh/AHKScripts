@@ -37,3 +37,5 @@ NOTES\*\*
 2. Create method for moving camera x degrees y direction with mouse wheel button
 
 3. Create method to check if the color that was just clicked has disappeared
+
+4. check for specific text in an area
