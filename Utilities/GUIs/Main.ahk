@@ -2,7 +2,7 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-GUI, Add, button, gScriptOne w100 section, RuneCrafting
+GUI, Add, button, gScriptOne w200 section, RuneCrafting
 GUI, Add, button, xs gScriptTwo wp, Prayer
 GUI, Add, button, xs gScriptThree wp, Woodcutting
 GUI, Add, button, xs gScriptFour wp, MiniGames
@@ -16,7 +16,7 @@ ScriptOne:
 return
 
 ScriptTwo:
-    run %A_ScriptDir%\SkillGUIs\Woodcutting.ahk
+    run %A_ScriptDir%\SkillGUIs\Prayer.ahk
     GUI, Hide
 return
 

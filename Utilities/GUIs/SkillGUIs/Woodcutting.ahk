@@ -2,26 +2,27 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-GUI, Add, button, gRcing1 w100 section, ColorClicker
-GUI, Add, button, xs gRcing2 wp, Regular Trees
-GUI, Add, button, xs gRcing3 wp, Oaks
-GUI, Add, button, xs gRcing4 wp, Willows
+GUI, Add, button, gWcing1 w200 section, ColorClicker
+GUI, Add, button, xs gWcing2 wp, Regular Trees
+GUI, Add, button, xs gWcing3 wp, Oaks
+GUI, Add, button, xs gWcing4 wp, Willows
 GUI, show
 return
 
-Rcing1:
+Wcing1:
     Run, %A_ScriptDir%\..\..\..\ColorClicker\ColorClicker.ahk
     GUI, Hide
 return
 
-Rcing2:
-    MsgBox, "Rcing 2"
+Wcing2:
+    MsgBox, "Wcing 2"
 return
 
-Rcing3:
-    MsgBox, "Rcing 3"
+Wcing3:
+    MsgBox, "Wcing 3"
 return
 
-Rcing4:
-    MsgBox, "Rcing 4"
+Wcing4:
+    MsgBox, "Wcing 4"
 return
+ESC::ExitApp

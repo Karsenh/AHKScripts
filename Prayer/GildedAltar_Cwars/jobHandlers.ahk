@@ -1,4 +1,4 @@
-#Include, ../../Utilities/GlobalLibrary.ahk
+#Include, %A_ScriptDir%\..\..\Utilities\GlobalLibrary.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative
@@ -10,7 +10,7 @@ useBonesOnAltar() {
     Send, {f1}
 
     Loop, 28 {
-        Random, rAltarClickSleep, 7, 47
+        Random, rAltarClickSleep, 12, 47
         currXslot := % "slot" i "X"
         currYslot := % "slot" i "Y"
 
@@ -20,6 +20,8 @@ useBonesOnAltar() {
         Random, rBoneClickSleep, 9, 67
         Sleep, rBoneClickSleep
         customMouseMove(438, 275, "fastest", 43, 67)
+        Random, rBoneClickSleep2, 112, 190
+        Sleep, rBoneClickSleep2
         customMouseClick()
 
         Sleep, rAltarClickSleep
@@ -37,12 +39,12 @@ getBonesFromCwars() {
 
     MouseGetPos, currX, currY
 
-    ; left click tele to PoH - SLEEP
+    ; click con cape tele to PoH on right-click menu
     customMouseMove(currX, currY+70, "fastest", 25, 4)
     customMouseClick()
 
     offset1 := idleMouseMovements()
-    Random, conTeleSleep, 5000, 5100
+    Random, conTeleSleep, 4989, 5200
     Sleep, conTeleSleep - offset1
 
     ; move to ornate jewelry box - SLEEP
@@ -116,7 +118,7 @@ moveBackToWorklessAltar() {
     customMouseClick()
 
     altarOffsetTime := idleMouseMovements()
-    Random, rMoveFromPortalToAltarSleep, 3443, 3601
+    Random, rMoveFromPortalToAltarSleep, 4000, 4112
     Sleep, rMoveFromPortalToAltarSleep - altarOffsetTime
 
 }

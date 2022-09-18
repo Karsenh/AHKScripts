@@ -1,4 +1,4 @@
-#Include, ./jobHandlers.ahk
+#Include, %A_ScriptDir%\jobHandlers.ahk
 #SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative

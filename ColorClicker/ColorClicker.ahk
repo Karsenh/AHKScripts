@@ -20,11 +20,13 @@ return
 
 PgUp::
     Loop {
-        PixelSearch, OutputVarX, OutputVarY, 9, 30, 517, 361, findColor, 1, Fast
-        MouseMove, OutputVarX, OutputVarY
-        Sleep, 100
-        MouseClick, Left
-        Sleep, 10000
+        PixelSearch, OutputVarX, OutputVarY, 9, 30, 517, 361, findColor, 1
+        customMouseMove(OutputVarX+4, OutputVarY+4, "fast", 10, 10)
+        Random, rSleep1, 17, 87
+        Sleep, rSleep1
+        customMouseClick()
+        Random, treeClickDelay, 10000, 11000
+        Sleep, treeClickDelay
         if (isInventoryFull()) {
             dropInventItems(False, 2, 28)
         }
