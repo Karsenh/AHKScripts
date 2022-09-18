@@ -20,7 +20,7 @@ return
 
 PgUp::
     Loop {
-        PixelSearch, OutputVarX, OutputVarY, 9, 30, 517, 361, findColor, 1
+        PixelSearch, OutputVarX, OutputVarY, 9, 30, 517, 361, findColor, 1, Fast
         customMouseMove(OutputVarX+4, OutputVarY+4, "fast", 10, 10)
         Random, rSleep1, 17, 87
         Sleep, rSleep1
