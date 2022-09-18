@@ -2,12 +2,12 @@
 CoordMode, Mouse, Relative
 
 customMouseMove(endX, endY, speed="fast", xRange=4, yRange=4) {
-    Random, fastestMouseSpeed, 75, 110
+    Random, fastestMouseSpeed, 77, 112
     Random, fastMouseSpeed, 325, 390
     Random, slowMouseSpeed, 425, 525
     Random, rXDev, -xRange, xRange
     Random, rYDev, -yRange, yRange
-    Random, clickDelay, 25, 75
+    Random, preClickSleep, 12, 75
 
     MouseGetPos, X, Y
 
@@ -22,14 +22,14 @@ customMouseMove(endX, endY, speed="fast", xRange=4, yRange=4) {
         RandomBezier(X, Y, endX, endY, "T" . slowMouseSpeed . " P2-6")
     }
 
-    Sleep, clickDelay
+    Sleep, preClickSleep
 
     return 
 }
 
 customMouseClick(clickDirection="left") {
-    Random, xCoordDev, -7, 7
-    Random, yCoordDev, -7, 7
+    Random, xCoordDev, -4, 4
+    Random, yCoordDev, -4, 4
     Random, moveDelay, 2, 23
     MouseGetPos, currX, currY
     Random, mouseSpeed, 3, 27

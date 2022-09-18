@@ -79,8 +79,8 @@ getBonesFromCwars() {
     customMouseMove(429, 123)
     customMouseClick()
 
-    Random, rCloseBankSleep, 78, 217
-    Sleep, rCloseBankSleep
+    Random, rCloseBankDelay, 78, 217
+    Sleep, rCloseBankDelay
 
     ; esc to close bank - SLEEP
     Send, {esc}

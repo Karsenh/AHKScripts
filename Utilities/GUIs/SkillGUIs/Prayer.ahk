@@ -10,6 +10,7 @@ return
 Prayer1:
     Run, %A_ScriptDir%\..\..\..\Prayer\GildedAltar_Cwars\Main.ahk
     GUI, Hide
+ExitApp
 return
 
 Prayer2:

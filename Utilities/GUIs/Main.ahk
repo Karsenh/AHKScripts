@@ -18,6 +18,7 @@ return
 ScriptTwo:
     run %A_ScriptDir%\SkillGUIs\Prayer.ahk
     GUI, Hide
+ExitApp
 return
 
 ScriptThree:
