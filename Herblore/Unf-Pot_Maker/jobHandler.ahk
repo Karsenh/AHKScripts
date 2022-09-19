@@ -69,7 +69,8 @@ make14Pots() {
     Send, {Space}
 
     Random, rWaitForPots, 16789, 17221
-    Sleep, rWaitForPots
+    delayOffset := idleMouseMovements()
+    Sleep, rWaitForPots - delayOffset
 
     return
 }
