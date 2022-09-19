@@ -159,13 +159,26 @@ RandomBezier( X0, Y0, Xf, Yf, O="" ) {
 getRandDirection() {
     Random, turnDir, 1, 4
     direction := ""
-    if (turnDir = 1) 
-        direction := "Left" 
-    if (turnDir = 2) 
-        direction := "Right" 
-    if (turnDir = 3) 
-        direction := "Up" 
-    if (turnDir = 4) 
-        direction := "Down" 
+
+    Switch direction
+    {
+    Case 1:
+        direction := "Left"
+    Case 2:
+        direction := "Right"
+    Case 3:
+        direction := "Up"
+    Case 4:
+        direction := "Down"
+    Case 5:
+        direction := "Left Up"
+    Case 6:
+        direction := "Left Down"
+    Case 7:
+        direction := "Right Up"
+    Case 8:
+        direction := "Right Down"
+    }
+
     return direction
 }
