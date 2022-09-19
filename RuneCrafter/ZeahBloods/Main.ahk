@@ -4,15 +4,12 @@ SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
 `::
-    global inventoryCoords
+    ; turnCamera("right", 1000)
+    ; idleCameraRotation()
+    turnCamera("down left", 1372)
+    Sleep, 1212
+    turnCamera("up right", 848)
 
-    Loop, 27 {
-        customMouseMove(inventoryCoords["slot28X"], inventoryCoords["slot28Y"], "fastest")
-        customMouseClick()
-
-        customMouseMove(inventoryCoords["slot27X"], inventoryCoords["slot27Y"], "fastest")
-        customMouseClick()
-    }
 return
 
 PgDn::

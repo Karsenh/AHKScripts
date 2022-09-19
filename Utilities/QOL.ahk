@@ -32,6 +32,25 @@ normalizeInterface() {
     Send, {WheelDown 100}
 }
 
+turnCamera(direction="left", holdTime=2000) {
+    Random, rHoldTimeDeviation, 3, 13
+
+    IfInString, direction, %A_Space%
+    {
+        StringSplit, directionArr, direction, %A_Space%
+        Send, {%directionArr1% down}
+        Send, {%directionArr2% down}
+        Sleep, holdTime
+        Send, {%directionArr1% up}
+        Send, {%directionArr2% up}
+        ToolTip, dir1: %directionArr1% `ndir2: %directionArr2%
+    }
+
+    Send, {%direction% down}
+    Sleep, holdTime
+    Send, {%direction% up}
+}
+
 dropInventItems(isInputEnabled=False, startSlot=1, endSlot=28) {
     global inventoryCoords
 
@@ -89,7 +108,7 @@ teleTo(location="home", SleepTime=3850) {
     }
 
     Sleep SleepTime
-    
+
     return
 }
 

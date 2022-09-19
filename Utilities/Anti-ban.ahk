@@ -1,3 +1,4 @@
+#Include, %A_LineFile%\..\QOL.ahk
 #SingleInstance, Force
 CoordMode, Mouse, Relative
 
@@ -63,6 +64,52 @@ idleMouseMovements() {
     return elapsedTime
 }
 
+idleCameraRotation(movement="subtle") {
+    ; Randomize, number of camera turns (2-5 / 1-3 for subtle)
+    ; Randomize the direction of ea turn based on number of turns
+    ; Randomize length of ea turn (less for subtle)
+    ; Randomize delay between ea turn
+    ; Add Random combo turns (Left-Up / Right-Up / Left-Down / Right-Down)
+    numCamTurns := 0
+    directionsToTurn := Object()
+
+    if (movement="subtle") {
+        Random, numTurns, 1, 3
+        numCamTurns := numTurns
+
+    } else {
+        Random, numTurns, 2, 5
+        numCamTurns := numTurns
+    }
+
+    Loop, %numCamTurns% {
+        directionsToTurn.Push(getRandDirection())
+    }
+
+    for Key, Val in directionsToTurn {
+        List .= Key "`t" Val "`n"
+        if (movement="subtle") {
+            Random, rTurnTime, 115, 750
+            Random, rDelayTime, 50, 150
+        }
+        Else {
+            Random, rTurnTime, 500, 1250
+            Random, rDelayTime, 75, 200
+
+        }
+        turnCamera(Val, rTurnTime)
+        Sleep, rDelayTime
+        ToolTip, % "Turning: " testVal " for " rTurnTime "ms then Sleep for: " rDelayTime
+    }
+    MsgBox, % List
+
+    return
+}
+
+idleStatCheck() {
+    return
+}
+
 RandomBezier( X0, Y0, Xf, Yf, O="" ) {
     Time := RegExMatch(O,"i)T(\d+)",M)&&(M1>0)? M1: 200
     RO := InStr(O,"RO",0) , RD := InStr(O,"RD",0)
@@ -103,4 +150,22 @@ RandomBezier( X0, Y0, Xf, Yf, O="" ) {
     }
     MouseMove, X%N%, Y%N%, 0
     Return N+1
+}
+
+; =========
+; HELPERS
+; =========
+
+getRandDirection() {
+    Random, turnDir, 1, 4
+    direction := ""
+    if (turnDir = 1) 
+        direction := "Left" 
+    if (turnDir = 2) 
+        direction := "Right" 
+    if (turnDir = 3) 
+        direction := "Up" 
+    if (turnDir = 4) 
+        direction := "Down" 
+    return direction
 }

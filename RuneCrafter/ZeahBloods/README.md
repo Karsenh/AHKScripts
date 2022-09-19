@@ -1,4 +1,4 @@
-A. Mining
+A. Mining > Check if dpick in inventory - equip if so > Randomly select a dense ess block (hue) to start mining >
 
     1. Click one of two (hues) detection boxes
 
