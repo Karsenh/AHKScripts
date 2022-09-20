@@ -6,6 +6,8 @@
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Prayer\CwarsBank.ahk
 
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Login\LoginScreen.ahk
+
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Minigames\GotR\shouldEmptyPouches.ahk
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Woodcutting\ColorClicker\FullLogInvent.ahk
@@ -17,3 +19,4 @@
 #Include, %A_LineFile%\..\Global-Coords.ahk
 #Include, %A_LineFile%\..\Interface_Interactions\Prayer.ahk
 #Include, %A_LineFile%\..\Interface_Interactions\MiniMapButtons.ahk
+

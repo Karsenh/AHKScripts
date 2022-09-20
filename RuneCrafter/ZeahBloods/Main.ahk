@@ -7,11 +7,13 @@ SetWorkingDir, %A_ScriptDir%
 `::
     ; turnCamera("right", 1000)
     ; idleCameraRotation()
-    normalizeZeahBloodInterface()
+    ; normalizeZeahBloodInterface()
+    isLoggedOut := checkIfLoggedOut()
+    ToolTip, % "Logged out: " isLoggedOut
 return
 
 PgDn::
     Pause, Toggle
 return
 
-Esc:: ExitApp
+LShift & Esc:: ExitApp

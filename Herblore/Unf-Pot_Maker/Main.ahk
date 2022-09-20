@@ -9,6 +9,7 @@ PgUp::
     Loop {
         bank()
         make14Pots()
+        checkIfLoggedOut()
     }
 return
 
