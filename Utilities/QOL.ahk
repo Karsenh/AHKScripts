@@ -52,7 +52,9 @@ turnCamera(direction="left", holdTime=2000) {
     return
 }
 
-cameraZoom(direction="in") {
+; amt = 1-55
+cameraZoom(direction="in", amt=10) {
+    ; Maximum zoom is 1-55 on scroll wheel
     startTime := A_TickCount
     ; Game window to define where mouse can scroll in/out
     Random, randX, 10, 515
@@ -71,7 +73,7 @@ cameraZoom(direction="in") {
     customMouseMove(randX, randY, "fast", 0, 0)
     Random, rScrollDelay, 13, 79
     Sleep, rScrollDelay
-    Send, {%WheelDir%}
+    Send, {%WheelDir% %amt%}
 
     totalTime := A_TickCount - startTime
     return totalTime
