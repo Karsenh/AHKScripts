@@ -115,7 +115,6 @@ idleCameraRotation(movement="subtle") {
             Random, rTurnTime, 975, 1867
             Random, rDelayTime, 121, 412
         }
-        MsgBox, % "Turning " Val " for " rTurnTime
         turnCamera(Val, rTurnTime)
         Sleep, rDelayTime
     }
