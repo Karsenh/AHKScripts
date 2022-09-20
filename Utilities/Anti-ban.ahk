@@ -115,6 +115,8 @@ idleCameraRotation(movement="subtle") {
             Random, rTurnTime, 975, 1867
             Random, rDelayTime, 121, 412
         }
+        if (Val == "Up" Or Val == "Down")
+            rTurnTime := rTurnTime / 2
         turnCamera(Val, rTurnTime)
         Sleep, rDelayTime
     }
