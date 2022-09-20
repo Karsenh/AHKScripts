@@ -156,11 +156,23 @@ idleStatCheck(skill="random") {
     Random, rSkillHoverSleep, 1000, 2500
     Sleep, rSkillHoverSleep
 
-    totalTime := A_TickCount - startTime
+    Random, rBackToInventMethod, 1, 5
+    if (rBackToInventMethod > 3)
+    {
+        customMouseMove(651, 212)
+        customMouseClick()
+    } else {
+        Send, {f1}
+    }
 
+    totalTime := A_TickCount - startTime
     ; ToolTip, % "Total elapsed time: " totalTime
 
     return totalTime
+}
+
+idleQuestCheck() {
+
 }
 
 RandomBezier( X0, Y0, Xf, Yf, O="" ) {
