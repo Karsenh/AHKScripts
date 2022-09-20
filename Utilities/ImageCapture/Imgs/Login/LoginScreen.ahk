@@ -4,7 +4,7 @@ SetWorkingDir, %A_ScriptDir%
 
 global inputtedPass
 
-getLoginInfo()
+; getLoginInfo()
 
 getLoginInfo() {
     global inputtedPass

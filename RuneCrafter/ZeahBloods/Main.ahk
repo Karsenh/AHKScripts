@@ -7,9 +7,8 @@ SetWorkingDir, %A_ScriptDir%
 `::
     ; turnCamera("right", 1000)
     ; idleCameraRotation()
-    ; normalizeZeahBloodInterface()
-    isLoggedOut := checkIfLoggedOut()
-    ToolTip, % "Logged out: " isLoggedOut
+    ; checkIfLoggedOut()
+    normalizeZeahBloodInterface()
 return
 
 PgDn::

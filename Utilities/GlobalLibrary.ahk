@@ -8,6 +8,8 @@
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Login\LoginScreen.ahk
 
+#Include, %A_LineFile%\..\ImageCapture\Imgs\Herblore\StillMaking14Pots.ahk
+
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Minigames\GotR\shouldEmptyPouches.ahk
 
 #Include, %A_LineFile%\..\ImageCapture\Imgs\Woodcutting\ColorClicker\FullLogInvent.ahk

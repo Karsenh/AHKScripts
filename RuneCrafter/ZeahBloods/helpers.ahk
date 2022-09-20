@@ -5,3 +5,7 @@ SetWorkingDir, %A_ScriptDir%
 chiselEssence() {
 
 }
+
+isMining() {
+
+}

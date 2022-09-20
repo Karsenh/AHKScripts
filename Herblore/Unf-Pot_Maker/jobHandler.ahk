@@ -66,6 +66,9 @@ make14Pots() {
     Random, rWaitToConfirmChatBox, 1201, 1307
     Sleep, rWaitToConfirmChatBox
 
+    checkVar := checkIfStillMixingPots()
+    if (checkVar == 0) ExitApp
+
     Send, {Space}
 
     delayOffset := 0
