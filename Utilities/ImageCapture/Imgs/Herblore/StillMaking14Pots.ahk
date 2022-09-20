@@ -12,6 +12,7 @@ checkIfStillMixingPots() {
         return true
     } else {
         MsgBox, "No longer mixing - Exiting App."
+        ExitApp
         return false
     }
 }
