@@ -68,9 +68,12 @@ make14Pots() {
 
     Send, {Space}
 
+    delayOffset := 0
     Random, rWaitForPots, 9023, 10237
-    delayOffset := idleMouseMovements()
-    delayOffset2 := idleCameraRotation("subtle")
+    delayOffset .= idleMouseMovements()
+    Random, shouldTurnCam, 1, 10
+    if (shouldTurnCam >= 7)
+        delayOffset .= idleCameraRotation("subtle")
     Sleep, rWaitForPots - delayOffset - delayOffset2
 
     return
