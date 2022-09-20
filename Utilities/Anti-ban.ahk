@@ -70,6 +70,7 @@ idleCameraRotation(movement="subtle") {
     ; Randomize length of ea turn (less for subtle)
     ; Randomize delay between ea turn
     ; Add Random combo turns (Left-Up / Right-Up / Left-Down / Right-Down)
+    startTime := A_TickCount
     numCamTurns := 0
     directionsToTurn := Object()
 
@@ -86,16 +87,12 @@ idleCameraRotation(movement="subtle") {
         newDirection := getRandDirection()
         if (directionsToTurn.Count() >= 1)
         {
-            MsgBox, % "Iteration" A_Index
             if (directionsToTurn[numCamTurns-1] == newDirection)
             {
                 While, (directionsToTurn[numCamTurns-1] == newDirection)
                 {
                     idx := numCamTurns - 1
-                    MsgBox, % directionsToTurn[idx] " == " newDirection
-                    MsgBox, % "Prev Direction: " newDirection
                     newDirection := getRandDirection()
-                    MsgBox, % "New Direction: " newDirection
                 }
             }
 
@@ -111,20 +108,24 @@ idleCameraRotation(movement="subtle") {
     for Key, Val in directionsToTurn {
         List .= Key "`t" Val "`n"
         if (movement="subtle") {
-            Random, rTurnTime, 115, 750
+            Random, rTurnTime, 200, 950
             Random, rDelayTime, 50, 150
         }
         Else {
-            Random, rTurnTime, 500, 1250
-            Random, rDelayTime, 100, 317
+            Random, rTurnTime, 975, 1867
+            Random, rDelayTime, 121, 412
         }
+        MsgBox, % "Turning " Val " for " rTurnTime
         turnCamera(Val, rTurnTime)
         Sleep, rDelayTime
-        ToolTip, % "Turning: " Val " for " rTurnTime "ms then delay for: " rDelayTime
     }
-    MsgBox, % List
 
-    return
+    elapsedTime := A_TickCount - startTime
+
+    ; MsgBox, %List%
+    ; MsgBox, % "Elapsed Time: " elapsedTime
+
+    return elapsedTime
 }
 
 idleStatCheck() {
@@ -200,8 +201,6 @@ getRandDirection() {
     Case 8:
         direction := "Right Down"
     }
-
-    ToolTip, Direction: %direction% from turnDir: %turnDir%
 
     return direction
 }

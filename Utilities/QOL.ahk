@@ -43,7 +43,6 @@ turnCamera(direction="left", holdTime=2000) {
         Sleep, holdTime
         Send, {%directionArr1% up}
         Send, {%directionArr2% up}
-        ToolTip, dir1: %directionArr1% `ndir2: %directionArr2%
     }
 
     Send, {%direction% down}
