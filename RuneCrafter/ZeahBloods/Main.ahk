@@ -6,10 +6,15 @@ SetWorkingDir, %A_ScriptDir%
 `::
     ; turnCamera("right", 1000)
     ; idleCameraRotation()
-    turnCamera("down left", 1372)
-    Sleep, 1212
-    turnCamera("up right", 848)
 
+return
+
+Numpad1::
+    idleCameraRotation("subtle")
+return
+
+Numpad2::
+    idleCameraRotation()
 return
 
 PgDn::

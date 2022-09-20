@@ -83,7 +83,29 @@ idleCameraRotation(movement="subtle") {
     }
 
     Loop, %numCamTurns% {
-        directionsToTurn.Push(getRandDirection())
+        newDirection := getRandDirection()
+        if (directionsToTurn.Count() >= 1)
+        {
+            MsgBox, % "Iteration" A_Index
+            if (directionsToTurn[numCamTurns-1] == newDirection)
+            {
+                While, (directionsToTurn[numCamTurns-1] == newDirection)
+                {
+                    idx := numCamTurns - 1
+                    MsgBox, % directionsToTurn[idx] " == " newDirection
+                    MsgBox, % "Prev Direction: " newDirection
+                    newDirection := getRandDirection()
+                    MsgBox, % "New Direction: " newDirection
+                }
+            }
+
+            directionsToTurn.Push(newDirection)
+
+        } else {
+            directionsToTurn.Push(newDirection)
+
+        }
+
     }
 
     for Key, Val in directionsToTurn {
@@ -94,12 +116,11 @@ idleCameraRotation(movement="subtle") {
         }
         Else {
             Random, rTurnTime, 500, 1250
-            Random, rDelayTime, 75, 200
-
+            Random, rDelayTime, 100, 317
         }
         turnCamera(Val, rTurnTime)
         Sleep, rDelayTime
-        ToolTip, % "Turning: " testVal " for " rTurnTime "ms then Sleep for: " rDelayTime
+        ToolTip, % "Turning: " Val " for " rTurnTime "ms then delay for: " rDelayTime
     }
     MsgBox, % List
 
@@ -157,10 +178,10 @@ RandomBezier( X0, Y0, Xf, Yf, O="" ) {
 ; =========
 
 getRandDirection() {
-    Random, turnDir, 1, 4
+    Random, turnDir, 1, 8
     direction := ""
 
-    Switch direction
+    switch turnDir
     {
     Case 1:
         direction := "Left"
@@ -179,6 +200,8 @@ getRandDirection() {
     Case 8:
         direction := "Right Down"
     }
+
+    ToolTip, Direction: %direction% from turnDir: %turnDir%
 
     return direction
 }
