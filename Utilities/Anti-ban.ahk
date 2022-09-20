@@ -120,10 +120,10 @@ idleCameraRotation(movement="subtle") {
     }
 
     elapsedTime := A_TickCount - startTime
-
     ; MsgBox, %List%
     ; MsgBox, % "Elapsed Time: " elapsedTime
 
+    ToolTip, % "Idle test"
     return elapsedTime
 }
 

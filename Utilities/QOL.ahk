@@ -43,11 +43,13 @@ turnCamera(direction="left", holdTime=2000) {
         Sleep, holdTime
         Send, {%directionArr1% up}
         Send, {%directionArr2% up}
+    } else {
+        Send, {%direction% down}
+        Sleep, holdTime
+        Send, {%direction% up}
     }
 
-    Send, {%direction% down}
-    Sleep, holdTime
-    Send, {%direction% up}
+    return
 }
 
 dropInventItems(isInputEnabled=False, startSlot=1, endSlot=28) {
