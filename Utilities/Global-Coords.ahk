@@ -1,5 +1,7 @@
 #SingleInstance, Force
 
+viewportCoords := Object("tlX", 10, "tlY", 35, "brX", 515, "brY", 360)
+
 ; Skills coords
 skillCoords := Object("attackX", 593, "attackY", 250, "strengthX", 593, "strengthY", 279, "defenseX", 590, "defenseY", 320, "rangeX", 590, "rangeY", 343, "prayerX", 590, "prayerY", 377, "magicX", 590, "magicY", 405, "rcingX", 591, "rcingY", 440, "constructionX", 590, "constructionY", 470, "hpX", 650, "hpY", 245, "agilityX", 650, "agilityY", 280, "herbloreX", 650, "herbloreY", 313, "thievingX", 650, "thievingY", 340, "craftingX", 650, "craftingY", 377, "fletchingX", 650, "fletchingY", 410, "slayerX", 650, "slayerY", 440, "hunterX", 650, "hunterY", 473, "miningX", 712, "miningY", 250, "smithingX", 712, "smithingY", 280, "fishingX", 712, "fishingY", 313, "cookingX", 712, "cookingY", 343, "firemakingX", 712, "firemakingY", 375, "wcingX", 712, "wcingY", 410, "farmingX", 712, "farmingY", 441)
 

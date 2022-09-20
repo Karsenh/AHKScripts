@@ -63,7 +63,7 @@ make14Pots() {
     customMouseMove(inventoryCoords["slot17X"], inventoryCoords["slot17Y"], "fastest")
     customMouseClick()
 
-    Random, rWaitToConfirmChatBox, 1221, 1313
+    Random, rWaitToConfirmChatBox, 1267, 1313
     Sleep, rWaitToConfirmChatBox
 
     checkIfStillMixingPots()
