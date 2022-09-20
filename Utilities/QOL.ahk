@@ -52,6 +52,31 @@ turnCamera(direction="left", holdTime=2000) {
     return
 }
 
+cameraZoom(direction="in") {
+    startTime := A_TickCount
+    ; Game window to define where mouse can scroll in/out
+    Random, randX, 10, 515
+    Random, randY, 33, 360
+
+    wheelDir := ""
+
+    switch direction
+    {
+    case "in":
+        wheelDir := "WheelUp"
+    case "out":
+        WheelDir := "WheelDown"
+    }
+
+    customMouseMove(randX, randY, "fast", 0, 0)
+    Random, rScrollDelay, 13, 79
+    Sleep, rScrollDelay
+    Send, {%WheelDir%}
+
+    totalTime := A_TickCount - startTime
+    return totalTime
+}
+
 dropInventItems(isInputEnabled=False, startSlot=1, endSlot=28) {
     global inventoryCoords
 

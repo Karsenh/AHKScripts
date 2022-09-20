@@ -6,15 +6,15 @@ SetWorkingDir, %A_ScriptDir%
 `::
     ; turnCamera("right", 1000)
     ; idleCameraRotation()
-
 return
 
 Numpad1::
-    idleCameraRotation("subtle")
+    ; cameraZoom("in")
+    idleStatCheck()
 return
 
 Numpad2::
-    idleCameraRotation()
+    cameraZoom("out")
 return
 
 PgDn::

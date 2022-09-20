@@ -127,8 +127,40 @@ idleCameraRotation(movement="subtle") {
     return elapsedTime
 }
 
-idleStatCheck() {
-    return
+idleStatCheck(skill="random") {
+    global skillCoords
+    startTime := A_TickCount
+
+    if (skill == "random")
+    {
+        skill := selectRandomSkill()
+    }
+
+    ; ToolTip, % "Skill: " skill
+
+    ; 40% chance to open with mouse | 60% chance to open with hotkey (f12)
+    Random, rOpenSkillTabMethod, 1, 5
+    if (rOpenSkillTabMethod > 3)
+    {
+        customMouseMove(590, 212)
+        customMouseClick()
+    } else {
+        Send {f12}
+    }
+
+    xCoord := % skill "X"
+    yCoord := % skill "Y"
+
+    customMouseMove(skillCoords[xCoord], skillCoords[yCoord])
+
+    Random, rSkillHoverSleep, 1000, 2500
+    Sleep, rSkillHoverSleep
+
+    totalTime := A_TickCount - startTime
+
+    ; ToolTip, % "Total elapsed time: " totalTime
+
+    return totalTime
 }
 
 RandomBezier( X0, Y0, Xf, Yf, O="" ) {
@@ -202,4 +234,61 @@ getRandDirection() {
     }
 
     return direction
+}
+
+selectRandomSkill() {
+    Random, rSkillInt, 1, 23
+    skillString := ""
+
+    switch, rSkillInt
+    {
+    case 1:
+        skillString := "attack"
+    case 2:
+        skillString := "strength"
+    case 3:
+        skillString := "defense"
+    case 4:
+        skillString := "range"
+    case 5:
+        skillString := "prayer"
+    case 6:
+        skillString := "magic"
+    case 7:
+        skillString := "rcing"
+    case 8:
+        skillString := "construction"
+    case 9:
+        skillString := "hp"
+    case 10:
+        skillString := "agility"
+    case 11:
+        skillString := "herblore"
+    case 12:
+        skillString := "thieving"
+    case 13:
+        skillString := "crafting"
+    case 14:
+        skillString := "fletching"
+    case 15:
+        skillString := "slayer"
+    case 16:
+        skillString := "hunter"
+    case 17:
+        skillString := "mining"
+    case 18:
+        skillString := "smithing"
+    case 19:
+        skillString := "fishing"
+    case 20:
+        skillString := "cooking"
+    case 21:
+        skillString := "firemaking"
+    case 22:
+        skillString := "wcing"
+    case 23:
+        skillString := "farming"
+    }
+
+    return skillString
 }
